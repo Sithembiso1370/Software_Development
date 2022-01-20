@@ -1,0 +1,567 @@
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --greenleaf : #526E2A ;
+    --leafygreen: #3db83b;
+    --dark_wood: #855E42;
+    --elegant_wood:  #BA8C63;
+}
+
+/* everythings style */
+*{
+    
+    margin: 0;
+    padding: 0;
+    /* border: 2px solid blue; */
+    font-size: 1.2rem;
+    box-sizing:border-box;
+}
+
+*:active {
+  opacity: 1;
+}
+/* START HTML */
+html {
+    background-color: var(--white);
+    position: relative;
+    display: block;
+    align-items:center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+body {
+    position: relative;
+    display: block;
+    align-items:center;
+    justify-content: center;
+    width: 1440px;
+    height:6000px;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    /* overflow: hidden; */
+    background:url("/assets/bg_z.gif");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    position: relative;
+    width: 1440px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+    color: var(--black);
+    display: grid;
+    grid-template-rows:  16% 40% 40% 6%;
+}
+
+/* START TOP SECTION */
+.topSection  {
+  background : url("assets/greenleaves.jpg");
+  width: 100%;
+  height: 100%;
+    z-index: 2;
+    opacity: 0.989;
+    position: relative;
+    background-color: #fff;
+    color: black;
+    margin: 0;
+    padding: 0;
+    /* height: 756px; */
+    width: 100%;
+    display:grid;
+    grid-template-rows: 16% 5% 79%;
+    border: 1px solid black;
+}
+
+.topSection1stSection {
+    background-color: var(--white);
+    color: var(--leafygreen);
+    z-index: 2;
+    /* overflow: hidden; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 10% 50% 40%;
+    text-align: center;
+}
+
+.logo {
+    z-index: 3;
+    position: relative;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.logo_img {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    border-radius: 50%;
+    /* box-shadow: 5px 5px 10px var(--elegant_wood), -5px -5px 10px #62ff5e; */
+}
+
+.logo_img:hover{
+    box-shadow: 4px  4px 5px #67e467, -4px -4px 5px var(--greenleaf);
+}
+.search{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1% ;
+}
+
+.minoradmin{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.topSection2ndSection {
+    z-index: 1;
+    background-color: var(--white);
+    color: var(--leafygreen);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+
+}
+
+ul {
+    z-index: 2;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 90%;
+    height: 100%;
+    align-items:center;
+    text-align: center;
+}
+
+li {
+    z-index: 2;
+    position: relative;
+    list-style: none;
+    align-items:center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.a1 {
+    z-index: 2;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-items:center;
+    background-color: var(--white);
+    color: var(--leafygreen);
+    /* font-family: ; */
+    font-size: 2rem;
+    border-radius: 40%;
+}
+
+.a1:hover{
+    /* background-color: var(--elegant_wood); */
+    box-shadow: 5px 5px 10px var(--elegant_wood), -5px -5px 10px var(--elegant_wood);
+    /* color: var(--greenleaf); */
+}
+
+
+/* .topSection2ndSection>ul>li>a {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+} */
+.topsection_hero {
+    width: 100%;
+    height: 100%;
+}
+
+
+.slideshow-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+  .slide_1 {
+    background : url("assets/hero2_bg.jpg");
+    background-repeat: no-repeat; 
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+  }
+
+  .slide_2 {
+    background : url("assets/greenleaves.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+  }
+
+  .slide_3 {
+    background : url("assets/Rooibos-Soap-Bar-Top-View.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+  }
+
+
+
+.leftbtnholder {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 15% 85%;
+    color: var(--white);
+    align-items: center;
+    justify-content: center;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: relative;
+    transition: 0.6s ease;
+  }
+
+.center_section_holder{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+
+.center_top {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.dots {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.dot {
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    color: var(--white);
+    transition: background-color 0.6s ease;
+  }
+
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+
+  
+
+.center_bottom {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.center_left {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.center_right {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.rightbtnholder {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 15% 85%;
+    color: var(--white);
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+/* 
+.slidertext {
+    position: relative;
+    background:url("/assets/bg_z.gif");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    opacity: 0.1;
+    height: 100%;
+    width: 50%;
+} */
+
+
+/* slider and slides */
+/* Hide the images by default */
+
+  /* Slideshow container */
+/* .slideshow-container {
+    position: relative;
+    max-width: 95%;
+    position: relative;
+    margin: auto;
+  }
+  .mySlides {
+    display: none;
+  } */
+  /* Next & previous buttons */
+  /* .prev, .next {
+    cursor: pointer;
+    position:relative;
+    top: 50%;
+    width: auto;
+    user-select: none;
+  } */
+  
+  /* Position the "next button" to the right */
+  /* .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  } */
+  
+  /* On hover, add a black background color with a little bit see-through */
+  /* .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  } */
+  
+  /* Caption text */
+  /* .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  } */
+  
+  /* Number text (1/3 etc) */
+  /* .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  } */
+  
+  /* The dots/bullets/indicators */
+  /* .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  } */
+  
+  /* .active, .dot:hover {
+    background-color: #717171;
+  } */
+  
+  /* Fading animation */
+  /* .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  } */
+  
+  /* @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  } */
+  /* end slides css */
+/* END TOP SECTION */
+
+/* START MIDDLE SECTION */
+
+.middleSection {
+    position: relative;
+    background : url("assets/greenleaves.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+    color: black;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.middleSection1stSection {
+    position: relative;
+}
+
+.products {
+    background-color: var(--white);
+    opacity: 0.85;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-rows: 33% 33% 33%;
+}
+
+
+.products:hover {
+  opacity: 0.95;
+  transition: all 1s;
+}
+
+
+.skinCare {
+    height: 100%;
+    width:100%;
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+
+.skinCare>h3 {
+    height: 100%;
+    width: 100%;
+    text-align:center;
+    font-size: 1.5rem;
+}
+
+.skincareGrid {
+  height: 100%;
+  width:100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+.BodyCare {
+    height: 100%;
+    width:100%;
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+
+.BodycareGrid {
+  height: 100%;
+  width:100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.BodyCare>h3 {
+    height: 100%;
+    width: 100%;
+    text-align:center;
+    font-size: 1.5rem;
+}
+
+.bathProducts {
+    height: 100%;
+    width:100%;
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+
+.bathProducts>h3 {
+    height: 100%;
+    width: 100%;
+    text-align:center;
+    font-size: 1.5rem;
+}
+
+.BathcareGrid {
+  background-color: yellowgreen;
+  height: 100%;
+  width:100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+ /* END MIDDLE SECTION */
+
+.BottomSection {
+    position: relative;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+    /* height: 594px; */
+    width: 100%;
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
+    border: 1px solid black;
+}
+
+.footerSection {
+    position: relative;
+    background-color: var(--black);
+    color: var(--white);
+    opacity: 0.91;
+    margin: 0;
+    padding: 0;
+    /* height: 675px; */
+    width: 100%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    border: 1px solid black;
+} 
+
+/* END HTML */

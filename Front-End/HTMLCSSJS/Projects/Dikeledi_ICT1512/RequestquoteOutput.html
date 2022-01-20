@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT1512</title>
+    <link rel="stylesheet" href="/css/extra_large_devices.css">
+    <link rel="stylesheet" href="/css/Large_devices.css">
+    <link rel="stylesheet" href="/css/Medium_devices.css">
+    <link rel="stylesheet" href="/css/Small_devices.css">
+</head>
+<style>
+    .staff_main {
+        background-color: gray;
+        opacity: 0.8;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 30% 70%;
+    }
+
+    .coatofarms {
+        /* background-color: black; */
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        color: whitesmoke;
+        text-align: center;
+    }
+
+    .coat_image {
+        background-color: url("/assets/reagile_logo.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .staff_details {
+        background-color: white;
+        color: red;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3,33%);
+    }
+
+    .staff1>h2 {
+        font-size: 2rem;
+    }
+
+    .staff1>div {
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .odd{
+        background-color: red;
+        color: whitesmoke;
+        text-align: center;
+    }
+
+    .even{
+        background-color: whitesmoke;
+        color: red;
+        text-align: center;
+    }
+</style>
+<body>
+<div class="staff_main">
+    <div class="coatofarms">
+        <div class="empty1">
+
+        </div>
+        <div class="coat_image">
+            <img src="/assets/reagile_logo.png" alt="" srcset="">
+        </div>
+        <div class="empty2">
+
+        </div>
+    </div>
+    <div class="staff_details">
+        <div class="staff1 odd" align="center">
+            <h2></h2>
+            <div class="designations" id="designations0">
+                
+            </div>
+        </div>
+        <div class="staff1 even">
+            <h2></h2>
+            <div class="designations" id="designations1">
+
+            </div>
+        </div>
+        <div class="staff1 odd">
+            <h2></h2>
+            <div class="designations" id="designations2">
+                
+            </div>
+        </div>
+        <div class="staff1 even">
+            <h2></h2>
+            <div class="designations" id="designations3">
+               
+            </div>
+        </div>
+        <div class="staff1 odd">
+            <h2></h2>
+            <div class="designations" id="designations4">
+                
+            </div>
+        </div>
+        <div class="staff1 even" >
+            <h2></h2>
+            <div class="designations" id="designations5">
+                
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="./Js/handleCookies.js"></script>
+</html>

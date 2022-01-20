@@ -1,0 +1,230 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LIST</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        width: fit-content;
+        height: fit-content;
+        
+    }
+
+    body {
+        background-color: yellow;
+        position: relative;
+        width:100%;
+        height: 1200px;
+        display: grid;
+        grid-template-rows: 10% 90%;
+    }
+
+    .input_tbl_body_tr{
+        background-color: whitesmoke;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    th {
+        position: relative;
+        border: 2px solid white;
+        margin: 2px;
+    }
+
+    td {
+        position: relative;
+        border: 2px solid white;
+        margin: 2px;
+    }
+</style>
+<body align="center">
+    <nav>
+        <h1>Sithembiso's TODO LIST</h1>
+
+    </nav>
+    <main align="center">
+
+        <div class="tools" align="center">
+            <div class="crud" align="center">
+                <table class="input_tbl">
+                    <tbody class="input_tbl_body">
+                        <tr class="input_tbl_body_tr">
+                            <input type="text" placeholder="Goal ID" id="Goal_id">
+                            <input type="file" placeholder="Attachements" id="Attachements">
+                            <input type="text" placeholder="Goal Date" id="Goal_date">
+                            <input type="text" placeholder="Estimated Duration" id="Est_duration">
+                            <input type="text" placeholder="Current Duration" id="Current_duration">
+                            <input type="text" placeholder="Added By" id="Added_by">
+                            <input type="text" placeholder="Description" >
+                            <input type="text" placeholder="Type">
+                            <input type="text" placeholder="Due Date">
+                            <input type="text" placeholder="Complete">
+                            <input type="text" placeholder="Comments">
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="crudbtns" align="center">
+                    <button id="Add" style="background-color: yellowgreen; color: white;">Add Goal</button>
+                    <button id="view" style="background-color: rgb(29, 29, 29); color: white;">View Goals</button>
+                    <button id="update" style="background-color: orange; color: white;">Update Goal</button>
+                    <button id="delete" style="background-color: red; color: white;">Delete Goal</button>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Goal ID</th>
+                    <th>Attachements</th>
+                    <th>Goal Date</th>
+                    <th>Estimated Duration</th>
+                    <th>Current Duration</th>
+                    <th>Goal Added By</th>
+                    <th>Goal Description</th>
+                    <th>Goal Type</th>
+                    <th>Goal Due Date</th>
+                    <th>Complete</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <!-- 1 -->
+                <tr>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                </tr>
+                <!-- 1 -->
+                 <!-- 1 -->
+                 <tr>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                </tr>
+                <!-- 1 -->
+                <!-- 1 -->
+                <tr>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                </tr>
+                <!-- 1 -->
+                <!-- 1 -->
+                <tr>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                </tr>
+                <!-- 1 -->
+                <!-- 1 -->
+                <tr>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                    <td>ddd</td>
+                </tr>
+                <!-- 1 -->               
+                
+            </tbody>
+        </table>
+    </main>
+</body>
+<script>
+    
+$(document).ready(function(e){
+
+	$("#view").keyup(function(){
+
+		$("#view").show();
+        var my_inp_vals = document.getElementsByTagName('input');
+
+		var text = $(this).val();
+		$.ajax({
+			type: 'GET',
+			url: 'search.php',
+			data: 'txt=' + getInputs(input_group_params),
+			success: function(data){
+				$("#tbody").html(data);
+                console.log(data);
+			}
+		});
+
+	})
+
+});
+
+
+
+
+
+// Function to crate table cell values
+    function setTableRowValues(filled_inputs) {
+        var tablecells = document.getElementsByTagName('td');
+
+        for (let index = 0; index < filled_inputs.length; index++) {
+            tablecells[index].innerHTML = filled_inputs[index].value;
+        }   
+    }
+
+    function getInputs(input_group_params) {
+
+        // CREATE AN ARRAY TO HOLD ID AND INPUT VALUES
+        var inputs_array = []
+        // LOOP THROUGH INPUTS AND POPULATE THE NEW ARRAY with input id and values
+        for (let index = 0; index < input_group_params.length; index++) {
+            inputs_array[input_group_params[index].getAttribute('id')] = input_group_params[index].value;
+        }   
+
+        return inputs_array;
+    }
+    
+</script>
+</html>

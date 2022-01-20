@@ -1,0 +1,793 @@
+@import url('https://fonts.googleapis.com/css2?family=Diplomata&family=Modak&family=Poller+One&family=Saira+Stencil+One&display=swap');
+
+/* Mains First */
+
+
+/* font-family: 'Diplomata', cursive;
+font-family: 'Modak', cursive;
+font-family: 'Poller One', cursive;
+font-family: 'Saira Stencil One', cursive; */
+
+
+* {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    transition: all 0,5s ease-in-out;
+    
+}
+
+/* .menuIcon {
+
+} */
+
+.menuIcon{
+    position: fixed;
+    top: 0%;
+    left: 2%;
+    width: 3%;
+    height: 4%;
+    display: initial;
+    z-index: 1000;
+    background: url("img/meu_icon_open.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    background-color: #a10017;
+    color: #000;
+    opacity: 0.8;
+    transition: all 0.5s;
+    z-index: 2;
+}
+
+.menuIcon.active {
+    background: url("img/MENUCLOSEDBLACK.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    background-color: red;
+    color: red;
+    opacity: 1;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    transition: all 0,5s ease-out;
+}
+
+body {
+    display: block;
+    height: 1080px;
+    width: 1700px ;
+    margin: 0px;
+    padding: 0px;
+    background: #ccd6f4;
+}
+
+.main{
+
+    position: relative;
+    display: grid;
+    gap: 5px;
+    align-items: center;
+    height: 1080px;
+    width: 100%;
+    grid-template-rows: 15% 85%;
+    border-radius: 1px; 
+    background: #a99d80;
+    -webkit-box-shadow: 5px 5px 6px #7a715c,
+    -5px -5px 6px #fff;
+    box-shadow: 5px 5px 6px #7a715c,
+    -5px -5px 6px #fff;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.topsect {
+    position: relative;
+    background-color: #D1D8EC;
+    width: 100%;
+    height: 170px;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-rows: 30% 65%;
+    border-radius: 3px; 
+    background: #a10017;
+    box-shadow: 6px 6px 11px #54000c,
+    -6px -6px 11px #ee0022;
+    color: white;
+}
+
+.headerlabel{
+    position: relative;
+    height: 100%;
+    font-size: 2rem;
+}
+
+.headerlabel h2 {
+    font-size: 100%;
+}
+
+
+.mainsect {
+    position: relative;
+    background: #ccd6f4;
+    width: 100%;
+    height: 900px;
+    display: grid;
+    gap: 1%;
+    grid-template-columns: 78% 20%;
+    overflow: scroll;
+
+}
+
+.mainsect>.extradata {
+    display: grid;
+    grid-template-rows: repeat(8,1fr);
+    box-shadow: 5px 5px 6px 6px #969696,
+    -5px -5px 6px 6px #ffffff;
+}
+
+div.extradata>div {
+    background: #ffffff;
+    height: 80%;
+    width: 90%;
+    margin: 2.5%;
+    border-radius: 25px; 
+    display: grid;
+    grid-template-rows: 40% 40%;
+    justify-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.extradata>div>div.doclabel {
+    border-bottom: 2px solid #54000c;
+    background: #a10017;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.search {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchcont{
+    margin: 5px;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 40% 50%;
+    color: black;
+    font-size: 1.5rem;
+}
+
+#searchcont>#searchinput {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 1.8rem;
+    border: 2px solid #fff;
+    border-bottom: 3px solid #000;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+.Crudsection {
+    position: relative;
+    padding: 5px;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 49% 49%;
+    gap: 0.5%;
+    background: #ccd6f4;
+    -webkit-box-shadow: 1px 1px 4px #525662,
+    -1px -1px 4px #ffffff;
+    box-shadow: 1px 1px 4px #525662,
+    -1px -1px 4px #ffffff;
+}
+
+
+
+.crudcrud {
+    display: grid;
+    height:100%;
+    grid-template-columns: repeat(2,50%);
+    border-radius: 1px; 
+
+}
+
+
+.create {
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(2,50%);
+    color: black;
+    font-size: 1.5rem;
+    overflow: hidden;
+
+}
+
+.create>#createbtn {
+    background-color: #fff;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    margin: 5px;
+    justify-content: center; 
+    align-items: center; 
+    color:greenyellow ;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 3px 3px 4px 4px #969696,
+    3px 3px 4px 4px #d7d5d5;
+}
+
+.create>#Showbtn {
+    background-color: #fff;
+    width: 90%;
+    height: 80%;
+    display: flex;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 3px 3px 4px 4px #969696,
+    3px 3px 4px 4px #d7d5d5;
+}
+.crudfilture {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,48%);
+    grid-template-rows: repeat(2,48%);
+    gap: 2%;
+    margin: 2%;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.8rem;
+    overflow: hidden;
+    transition: all 1s;
+}
+.from {
+    background-color: #fff;
+    border-radius: 5px;
+    height: 90%;
+    color: blue;
+    align-items: center;
+    justify-content: center;
+}
+
+.to {
+    background-color: #fff;
+    border-radius: 5px;
+    height: 90%;
+    color: blue;
+    align-items: center;
+    justify-content: center;
+}
+.from>input {
+    border: 2px solid #fff ;
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+.to>input {
+    border: 2px solid #fff ;
+    border-radius: 5px;
+    font-size: 1.5rem;
+
+}
+
+.range {
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    gap: 1%;
+    height: 60%;
+    width: 90%;
+    margin: 2% 5% 5% 5%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 3px 3px 4px 4px #969696,
+    3px 3px 4px 4px #d7d5d5;
+}
+
+#otherparam {
+    height: 100%;
+    width: 100%;
+    margin-top: 8px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+#range {
+    height: 100%;
+    width: 100%;
+    border-radius: 25px; 
+    font-size: 1.5rem;
+}
+
+#range>div {
+    height: 100%;
+    width: 90%;
+    font-size: 1.5rem;
+}
+
+#range>.from {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 40% 60%;
+    font-size: 1.5rem;
+}
+
+#range>.from label{
+    text-align: center;
+    color: #a10017;
+
+}
+
+
+
+#range>.to label{
+    text-align: center;
+    color: #a10017;
+}
+
+
+
+
+#range>.from>input {
+    height: 100%;
+    border-radius: 15px;
+}
+#range>.to {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 40% 60%;
+    font-size: 1.5rem;
+}
+#range>.from>input {
+    border-radius: 15px;
+}
+
+
+
+select:hover {
+    cursor: pointer;
+}
+
+.tableparam>select{
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    margin: 1%;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content:center ;
+    border-radius: 25px; 
+}
+
+.othereparam>select {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    height: 90%;
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 5px 5px 6px #969696,
+    -5px -5px 6px #ffffff;
+    font-size: 1.1rem;
+}
+
+.othereparam2>select {
+    height: 70%;
+    width: 100%;
+    margin: 2.5%;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content:center ;
+    -webkit-border-radius: 15px; 
+    border-radius: 25px; 
+    -webkit-box-shadow: 5px 5px 6px #969696,
+    -5px -5px 6px #ffffff;
+    box-shadow: 5px 5px 6px #969696,
+    -5px -5px 6px #ffffff;
+}
+
+option {
+    background-color: black;
+    color: #fff;
+    border-radius: 15px;
+    opacity: 0.1;
+}
+
+table {
+    padding-left: 2%;
+    padding-right: 2%;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 5% 90% 5%;
+    border-radius: 8px; 
+    background: #ccd6f4;
+}
+
+#mytbody1 {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+/* thead {
+    height: 50px;
+} */
+thead>tr{
+    position: relative;
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    border: 1px solid black;
+    grid-template-columns: repeat(8,12.5%);
+}
+
+ tr>th{
+     position: relative;
+     align-items: center;
+     justify-content: center;
+     height: 49px;
+     width: 100%;
+     text-align: center;
+     display: flex;
+     background: #ccd6f4;
+     color: #7e0411;
+     border: 1px solid #7e0411 ;
+ }
+
+ tr>th:hover {
+     cursor: pointer;
+     text-decoration: underline;
+ }
+
+
+tbody>tr{
+    position: relative;
+    background-color: #fff;
+    height: 50px;
+    width: 100%;
+    display: grid;
+    border: 1px solid black;
+    grid-template-columns: repeat(8,12.5%);
+}
+
+tbody>tr:hover {
+    background-color: #ccd6f4;
+    color: #000;
+}
+
+
+
+tr>td{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 49px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    background: #ccd6f4;
+    color: #7e0411;
+    border: 1px solid #7e0411 ;
+ }
+
+ tr>td:hover {
+    text-decoration: underline #ccd6f4;
+ }
+
+ tr>td>a{
+     text-decoration: dotted;
+     color: #000;
+     opacity: 1;
+ }
+
+ tr>td>a:hover {
+     background: #ccd6f4;
+     color: blue;
+     font-style: italic;
+     text-decoration: underline #7e0411;
+ 
+ }
+
+ tr>td>button {
+    width: 100%;
+    height: 100%;
+     cursor: pointer;
+ }
+
+ 
+ tr>td>button:hover {
+    /* border-radius: 5px; */
+    cursor: pointer;
+    /* transition: all 0,5s ease-in-out; */
+}
+
+
+
+
+ td>input{
+     border-radius: 8px;
+     border: 1px solid #fff;
+     border-bottom: 2px solid #7e0411;
+     cursor: pointer;
+ }
+
+
+ td>input:hover{
+    border-radius: 8px;
+    border: 1px solid #fff;
+    border-bottom: 1px solid #7e0411;
+    transition: all 0,5s ease-in;
+}
+
+
+ tr>td>button:hover {
+    width: 100%;
+    border-radius: 3px;
+    transition: all 0,5s ease-in-out;
+}
+
+tfoot {
+    position: relative;
+    display: block;
+    color: black;
+
+}
+
+tfoot>tr{
+    position: relative;
+    font-size: 2rem;
+    color: black;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5,20%);
+}
+
+.tfoot_tr {
+    background-color: #ccd6f4;
+    color: black;
+}
+
+.tfoot_tr:hover {
+    font-size: 2rem;
+}
+/* 
+ tr>td:hover{
+      border: 4px solid #7ed321;
+ } */
+
+ #Editbtn{
+     color: white;
+     font-weight: bold;
+     font-size: 1.4rem;
+    background: #7ed321;
+ }
+
+ #Editbtn:hover{
+    -webkit-border-radius: 3px; 
+    border-radius: 3px; 
+    transition: all 0,5s ease-in-out;
+ }
+
+
+ #savebtn {
+     font-weight: bold;
+     font-size: 1.4rem;
+     color: white;
+     font-weight: bold;
+     font-size: 1.4rem;
+    background: #7ed321;
+ }
+
+ #updatebtn {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.4rem;
+   background: #7ed321;
+}
+
+ #deletebtn {
+    font-weight: bold;
+    font-size: 1.4rem;
+     color: white;
+    border-radius: 3px; 
+    background: #f80821;
+ }
+
+ button {
+     height: 100%;
+     width: 100%;
+     border: 3px solid #fff;
+ }
+
+ button:hover {
+    border: 4px solid #7ed321;
+    transition: all 0,5s ease-in-out;
+}
+/* tbody>tr{
+    height: 100%;
+    width: 100%;
+} */
+
+
+/* .sidebar h4 {
+    color: #fff;
+    font-size: 1.3rem;
+    transition: all 0.5s;
+} */
+
+.sidebar nav {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    padding: 1px;
+    grid-template-columns: repeat(1fr,2);
+}
+
+.sidebar nav a {
+    display: block;
+    color: #ccd6f4;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid rgba(225, 225, 225, 0.05);
+    transition: color 2s;
+    text-decoration: none;
+    border: 0.5px solid #ccd6f4;
+    transition: all 1.5s;
+}
+
+.sidebar nav a:hover {
+    border: 1px solid red;
+    background-color: red;
+    color: #000;
+    opacity: 0.75;
+    box-shadow: 6px 6px 17px #9e0000,
+    6px 6px 17px#ff0000; 
+    text-decoration: underline;     
+    animation-name: example;
+    animation-duration: 1s;
+}
+
+/* on element animated */
+/*   animation-name: example;
+  animation-duration: 4s; */
+
+/* animation */
+@keyframes example {
+    0%   {
+        border-radius: 5% 5% 12.5% 12.5%;
+        font-size: 1.1rem;
+    }
+    25%  {
+        border-radius: 5% 5% 25% 25%;
+        font-size: 1.11rem;
+    }
+    50%  {
+        border-radius: 5% 5% 37.5% 37.5%;
+        font-size: 1.12rem;
+    }
+    100% {
+        border-radius: 5% 5% 50% 50%;
+        font-size: 1.13rem;
+    }
+  }
+
+
+
+i:hover {
+    cursor:pointer;
+}
+
+.sidebar nav a span {
+    transition: display 1s;
+}
+
+
+
+.sidebar nav a i {
+    width: 30px;
+    transition: all 0.5s;
+}
+
+/* #check:checked ~ .sidebar {
+    left: -180px;
+} */
+
+#check:checked ~ .sidebar nav span {
+    display: none;
+}
+
+#check:checked ~ .sidebar nav a {
+    margin-left: 172px;
+    /*font-size: 23px;*/
+}
+
+#check:checked ~ .sidebar center > h4 {
+    visibility: hidden;
+}
+
+#check:checked ~ .content {
+    margin-left: 70px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 10%;
+    left: -14.5%;
+    width: 15%;
+    height: 20%;
+    border-radius: 3px solid #7e0411;
+    background-color: #2f323a;
+    transition: left 0.5s;
+    box-shadow: 3px 0 10px #2f323a;
+    z-index: 1;
+    opacity: 0.7;
+    transition: all 2.5s;
+}
+
+.sidebar.active {
+    left: 1%;
+    transition: all 1s;
+}
+
+
+/* .active {
+    left: 1%;
+} */
+
+
+/* .sidebar::after {
+    content: "";
+    position: fixed;
+    top: 40%;
+    left: 2%;
+    width: 1%;
+    height: 5%;
+    background-color: yellow;
+    transition: left 0.5s;
+    box-shadow: 3px 0 10px #2f323a;
+    z-index: 1;
+    overflow: auto;
+    transition: all 0.5s;
+} */
+
+/* .sidebar:hover {
+    left: 10%;
+    border: 2px solid #79c43e;
+    opacity: 0.7;
+} */
+

@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions and Animations in CSS_ Adding Motion with CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <!-- CSS Transitions
+       
+    <h4>CSS transitions provide a way to control how a property changes from one value to
+    the next over time. We can make the property value change gradually, creating pleas
+    ant
+    and, hopefully, unobtrusive effects.</h4>
+    <h4 ><i>In this chapter, we cover the four transition properties and the transition shorthand
+        that not only make our transition possible but very easy to implement.</i></h4>
+
+        <div class="div1" id="div1">
+           NB | When the user hovers over the div, every property that has a different value in the
+           default state versus the hovered state will change to the hover-state values. We use the
+           transition-property property to define which of those properties we want to animate
+           over time (versus instantly). All the properties will change from the default
+           value to the hovered value on hover, but only the animatable properties included in
+           the transition-property will transition over time. Nonanimatable properties like
+           border-style will change from one value to the next instantly.
+        </div>
+
+        <div class="divalltrans" id="divalltrans">
+                        all
+            If you want to define all the properties to transition at the same time, speed, and pace,
+            use all. If all is the only value or the last value in the comma-separated value for
+            transition-property, all the animatable properties will transition in unison.
+        </div>
+
+        <div class="foo">Hello</div> -->
+
+        <!-- CSS ANIMATIONS -->
+        <!-- @keyframes -->
+        <div class="defintionAnimations">
+            CSS animations are similar to transitions in that values of CSS properties change over
+            time. But transitions only let us animate from an initial value to a destination value
+            and back again. CSS keyframe animations let us decide if and how an animation
+            repeats and give us granular control over what happens throughout the animation.
+        </div>
+    
+</body>
+<script>
+
+    // Logs the Object being transitioned at the time it  is ending the transition
+    document.querySelector('#divalltrans').addEventListener('transitionend',
+    function (e) {
+        console.log('Logs the Object being transitioned and makes available all its native properties to access at the time it  is ending the transition');
+        console.log('My event | ',e);
+        console.log('My event target parent| ',e.target.parentNode);
+        console.log('My event target | ',e.target);
+        console.log('My event target ID | ',e.target.getAttribute('id'));
+        console.log('My event target  First Child| ',e.target.firstChild);
+        e.target.innerHTML = 'Changed';
+        console.log('My events property name | ',e.propertyName);
+        console.log('My event target  First Child| ',e.target.firstChild);
+
+    });
+</script>
+</html>

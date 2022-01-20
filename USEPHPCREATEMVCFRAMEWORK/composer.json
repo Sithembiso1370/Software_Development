@@ -1,0 +1,15 @@
+{
+    "name": "sithembiso/usephpcreatemvcframework",
+    "autoload": {
+        "psr-4": {
+            "app\\": "."
+        }
+    },
+    "authors": [
+        {
+            "name": "sithembiso1370",
+            "email": "sithembiso.maphanga@gmail.com"
+        }
+    ],
+    "require": {}
+}

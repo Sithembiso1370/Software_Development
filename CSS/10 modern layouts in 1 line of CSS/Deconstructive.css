@@ -1,0 +1,23 @@
+
+body
+{
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+}
+
+.div {
+    width: 100%;
+    /* Stretching */
+    flex: 1 1 150px;  
+    /* No Stretching */
+    /* flex: 0 1 150px; */
+    margin: 5px;
+    background-color: yellowgreen;
+}

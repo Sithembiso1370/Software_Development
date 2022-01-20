@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Tax App</title>
+    <link rel="stylesheet" href="salestax.css">
+</head>
+<body>
+    <div class="content" id="content">
+        <h1>Sales Tax App</h1>
+        <p>Enter the values below and Click <strong>"Calculate"</strong> </p>
+
+        <!-- Tax Calculator -->
+        <div id="taxCalc" class="taxCal">
+            <label for="subtotal"> Subtotal : </label>
+            <input type="text" id="subtotal"><br>
+
+            <label for="taxRate"> Tax Rate : </label>
+            <input type="text" id="taxRate"><br>
+
+            <label for="salesTax"> Sales Tax : </label>
+            <input type="text" id="salesTax" disabled="disabled"><br>
+
+            <label for="total"> Total : </label>
+            <input type="text" id="total" disabled="disabled"><br>
+
+            <label for="subtotal"> &nbsp; </label>
+            <input type="button" id="calculate" value="calculate"><br>
+        </div>
+
+
+    </div>
+    
+</body>
+<script src="salestaxcalc.js"></script>
+</html>
