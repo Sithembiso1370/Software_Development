@@ -60,19 +60,20 @@ class Router {
             return $this->renderView($callback);
         }
 
-        // CHECK IF THE CALLBACK IS OFF STRING TYPE
+        // CHECK IF THE CALLBACK IS OFF Array TYPE and get the first indexed item
+        
         if (is_array($callback)) {
             # code...
-            // Render the the view passed in
+            // AND SET IT TO THE CURRENT CONTROLLER to the first item in the indexed array
             Application::$app->controller = new $callback[0]();
-
+            // 
             $callback[0] = Application::$app->controller;
         }
 
 
 
         // echo call_user_func($callback);
-        return call_user_func($callback, $this->request);
+        return call_user_func($callback, $this->request, $this->response);
     }
 
     public function renderView($view,$params = []){
@@ -113,11 +114,11 @@ class Router {
 
     public function renderHeaderOnly($view){
 
-        if ($view == 'home') {
+        if ($view == '/') {
             # code...
             ob_start();
             // INCLUDE THE VIEW
-            include_once Application::$ROOT_DIR.'./vendor/views/layoutComponents/header1.php'; 
+            include_once Application::$ROOT_DIR.'./vendor/views/layoutComponents/header.php'; 
             return ob_get_clean(); 
         }
         else{

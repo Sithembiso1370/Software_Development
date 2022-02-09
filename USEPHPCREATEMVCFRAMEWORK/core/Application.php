@@ -4,7 +4,7 @@ namespace app\core;
 
 use Responce;
 
-// Entry Script of the Framework 
+
 /**
  * @author Sithembiso Maphanga
  * @package app\core
@@ -20,37 +20,47 @@ class Application {
     public Router $router;
     public Request $request;
     public Response $response;
+    public Session $session;
+    public Database $db;
+    public ?DbModel $user;
 
     public Controller $controller ;
 
-    // Create the constructor of the function
-    public function __construct($rootPath)
+    // Create the constructor of the function that takes in the root path and enironment config variables 
+    public function __construct($rootPath,array $config)
     {
         // Get Project Root Directory and make global singleton
         self::$ROOT_DIR = $rootPath;
         // Get application instance and make global singleton
         self::$app = $this;
 
-        // Create an Instance of the Responce
+        // Create an Instance of the Response
         $this->response = new Response();
 
         // Application needs to create an instance of the Request
          $this->request = new Request();
 
+        //  Create an instance of the Session to call its constructor
+        $this->session = new Session();
+
         //  Pass the instance of the Request to the Local Router
          $this->router = new Router($this->request, $this->response);
+
+
+        //  Create an instance of the database inside the Application
+         $this->db = new Database($config['db']);
+
+        //  User::findOne();
     }
 
     public function run(){
         // echo $this->router->getURL();
-        // to do:
         echo $this->router->resolve();
-
     }
-
-/*
-* @return \app\core\Controller
-*/
+    
+    /*
+    * @return \app\core\Controller
+    */
     public function getController(): \app\core\Controller
     {
         return $this->controller;
@@ -63,6 +73,13 @@ class Application {
     public function setController(\app\core\Controller $controller): void
     {
         $this->controller = $controller;
+    }
+
+    public function login(DbModel $user){
+        $this->user = $user;
+        $primarykey = $user->primaryKey() ;
+        $primaryValue = $user->{$primarykey};
+        $this->session->set('user', $primarykey);
     }
 
 

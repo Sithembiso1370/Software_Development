@@ -13,127 +13,104 @@ namespace app\controllers;
 use app\core\Application;
 use app\core\Controller;
 use app\core\Request;
-
-use app\models\RegisterModel;
+use app\core\Response;
+use app\models\LoginForm;
+use app\models\loginModel;
+use app\models\User;
 
 class AuthController extends Controller {
 
+    public  function login(Request $request, Response $response){
+        
 
+        $loginForm = new LoginForm();
 
-
-    public  function login(Request $request){
-        $params = [];
-
+        // Create an array to hold errors
+        $errors = [];
         if ($request->isPost()) {
-
-            # code...
-            // array_push($params,'Handling this submitted data');
-
-            $body = $request->getBody();
+           
+            $loginForm->loadData($request->getBody());
 
 
-            foreach ($body as $key => $value) {
-                $params[$key] = $value;
-            }
-
+            // echo '<pre>';
+            // var_dump($loginForm->email);
+            // echo '<pre>';
             // Test if data is valid
-            if ($params['username'] == '') {
+            if ($loginForm->validate() && $loginForm->login()) {
                 # code...
-                $this->setLayout('auth');
-                $params['error'] = 'Please fill in all fields';
-                return $this->render('login',$params);
+                // SET SESSIONS FOR RETRIEVAL ON OTHER PAGES
+                Application::$app->session->setFlash('login','Welcome Back !!');
+                Application::$app->response->redirect('/');  
+                exit;       
             }
-            else {
-                # code...
-                return $this->render('home',$params);
-            }
-            
-            
         }
-        else {
-            # code...
-            $this->setLayout('auth');
-            return $this->render('login',$params);
-        }
+        
+        $this->setLayout('auth');
+        return $this->render('login',[
+            'model' => $loginForm
+        ]); 
 
 
     }
-
-
-
-    protected function cleanData(){
-        // Filture ,Sanitize and Clean The Data 
-        // Return the Sanitized Data as an array of the same form,type and Structure
-    }
-
 
 
     public function register(Request $request){
 
-        $params = [];
-        // Create an array to hold errors
-        $errors = [];
+        $user = new User();
 
         if ($request->isPost()) {
-
-            $registerModel = new RegisterModel();
-
-            $firstname = $request->getBody()['firstname'];
-
-            // echo $firstname;
+           
+            $user->loadData($request->getBody());
 
 
             // Test if data is valid
-            if (!$firstname) {
+            if ($user->validate() && $user->save()) {
                 # code...
-                $this->setLayout('auth');
-                $errors['firstname'] = 'Please fill in all fields';
-                return $this->render('register',$errors);
+                Application::$app->session->setFlash('success','Thanks for registering');
+                Application::$app->response->redirect('/');  
+                exit;     
+
             }
-            else {
-                # code...
-                return $this->render('home',$params);
-            }
-            
-            
+
+            // echo '<pre>';
+            // var_dump($registerModel->errors);
+            // echo '</pre>';
+
         }
-        else {
-            # code...
-            $this->setLayout('auth');
-            return $this->render('register',$params);
-        }
+        $this->setLayout('auth');
+        return $this->render('register',[
+            'model' => $user
+        ]); 
 
     }
 
+    public function tulip(Request $request){
+
+        $user = new User();
+
+        if ($request->isPost()) {
+           
+            $user->loadData($request->getBody());
 
 
-    public function handleRegister(){
-        $resp = '';
-        // Check if the form is filled
-        if (isset($_REQUEST['subject']) && isset($_REQUEST['email'])  && isset($_REQUEST['body'])) {
-            # code...
-            $resp = "ready to save this submitted data";
-            foreach ($_REQUEST  as $key => $value) {
+            // Test if data is valid
+            if ($user->validate() && $user->save()) {
                 # code...
-                $resp .= '<br> '.$key.' => '.$value;
+                Application::$app->response->redirect('/login');  
+                return 'success';       
             }
 
-            $params = [
-                'response' => $_REQUEST['subject']
-            ];
-    
-            return $this->render('login',$params);
-        }
-        else {
-            $resp = 'Please fill all values';
-            $params = [
-                'response' => $_REQUEST['subject']
-            ];
-    
-            return $this->render('register',$params);
-        }
-    }
+            // echo '<pre>';
+            // var_dump($registerModel->errors);
+            // echo '</pre>';
 
+        }
+        $this->setLayout('auth');
+        return $this->render('tulip',[
+            'model' => $user
+        ]); 
+
+    }
 
 
 }
