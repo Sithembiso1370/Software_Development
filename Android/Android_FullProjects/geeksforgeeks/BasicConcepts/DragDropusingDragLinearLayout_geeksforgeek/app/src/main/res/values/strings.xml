@@ -1,0 +1,7 @@
+<resources>
+<!--    TODO : Step 3: Modify the strings.xml file -->
+    <string name="app_name">GFG App</string>
+    <string name="image_desc">image</string>
+    <string name="dsa_course">DSA Course1</string>
+    <string name="geeks_for_geeks">Geeks for Geeks</string>
+</resources>

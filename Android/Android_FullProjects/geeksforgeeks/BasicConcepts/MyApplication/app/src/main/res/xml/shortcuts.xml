@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Shortcut 1:
+    Throws the user to Main Activity through the intent-->
+    <shortcut
+        android:enabled="true"
+        android:icon="@mipmap/icon"
+        android:shortcutId="compose0"
+        android:shortcutShortLabel="@string/compose_shortcut_short_label10">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.example.createstaticshortcuts.MainActivity"
+            android:targetPackage="com.example.createstaticshortcuts" />
+    </shortcut>
+
+    <!-- Shortcut 2:
+    Throws the user to Activity 1 through the intent-->
+    <shortcut
+        android:enabled="true"
+        android:icon="@mipmap/icon"
+        android:shortcutId="compose1"
+        android:shortcutShortLabel="@string/compose_shortcut_short_label1">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.example.createstaticshortcuts.Activity1"
+            android:targetPackage="com.example.createstaticshortcuts" />
+    </shortcut>
+
+    <!-- Shortcut 3:
+    Throws the user to Activity 2 through the intent-->
+    <shortcut
+        android:enabled="true"
+        android:icon="@mipmap/icon"
+        android:shortcutId="compose2"
+        android:shortcutShortLabel="@string/compose_shortcut_short_label2">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.example.createstaticshortcuts.Activity2"
+            android:targetPackage="com.example.createstaticshortcuts" />
+    </shortcut>
+
+    <!-- Shortcut 4:
+    Throws the user to Activity 3 through the intent-->
+    <shortcut
+        android:enabled="true"
+        android:icon="@mipmap/icon"
+        android:shortcutId="compose3"
+        android:shortcutShortLabel="@string/compose_shortcut_short_label3">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.example.createstaticshortcuts.Activity3"
+            android:targetPackage="com.example.createstaticshortcuts" />
+    </shortcut>
+
+</shortcuts>

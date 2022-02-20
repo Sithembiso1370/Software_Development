@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:visibility="visible">
+
+    <!--  TODO : CREATE 3 ROWS TO HOLD TICTAC 3 TICTAC CELLS EACH  -->
+    <!-- TODO : CREATE  first row of the table layout-->
+    <TableRow
+        android:gravity="center"
+        android:id="@+id/row1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- TODO : CREATE Add BUTTON elements/columns in the first row-->
+
+        <Button
+            android:id="@+id/bu1"
+            android:layout_width="50pt"
+            android:layout_height="50pt"
+            android:layout_marginLeft="3pt"
+            android:layout_marginRight="3pt"
+            android:onClick="buClick"
+            android:text="" />
+
+        <Button
+            android:id="@+id/bu2"
+            android:layout_width="50pt"
+            android:layout_height="50pt"
+            android:layout_marginLeft="3pt"
+            android:layout_marginRight="3pt"
+            android:onClick="buClick"
+            android:text="" />
+
+        <Button
+            android:id="@+id/bu3"
+            android:layout_width="50pt"
+            android:layout_height="50pt"
+            android:layout_marginLeft="3pt"
+            android:layout_marginRight="3pt"
+            android:onClick="buClick"
+            android:text="" />
+    </TableRow>
+
+    <!-- TODO : CREATE 2nd row of the table layout-->
+    <TableRow
+        android:gravity="center"
+        android:id="@+id/row2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <Button
+            android:id="@+id/bu4"
+            android:layout_width="50pt"
+            android:layout_height="50pt"
+            android:layout_marginLeft="3pt"
+            android:layout_marginRight="3pt"
+            android:onClick="buClick"
+            android:text="" />
+
+        <Button
+            android:id="@+id/bu5"
+            android:layout_width="50pt"
+            android:layout_height="50pt"
+            android:layout_marginLeft="3pt"
+            android:layout_marginRight="3pt"
+            android:onClick="buClick"
+            android:text="" />
+
+        <Button
+            android:id="@+id/bu6"
+            android:layout_width="50pt"
+            android:layout_height="50pt"
+            android:layout_marginLeft="3pt"
+            android:layout_marginRight="3pt"
+            android:onClick="buClick"
+            android:text="" />
+    </TableRow>
+
+    <!-- TODO : CREATE  3th row of the table layout-->
+    <TableRow
+        android:gravity="center"
+        android:id="@+id/row3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/bu7"
+            android:layout_width="124dp"
+            android:layout_height="50pt"
+            android:layout_marginRight="3pt"
+            android:layout_marginLeft="3pt"
+            android:onClick="buClick"
+            android:text="" />
+
+        <Button
+            android:id="@+id/bu8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="3pt"
+            android:layout_marginRight="3pt"
+            android:onClick="buClick"
+            android:text="" />
+
+        <Button
+            android:id="@+id/bu9"
+            android:layout_width="50pt"
+            android:layout_height="50pt"
+            android:layout_marginLeft="3pt"
+            android:layout_marginRight="3pt"
+            android:background="#00BCD4"
+            android:onClick="buClick"
+            android:text="" />
+
+    </TableRow>
+
+</TableLayout>

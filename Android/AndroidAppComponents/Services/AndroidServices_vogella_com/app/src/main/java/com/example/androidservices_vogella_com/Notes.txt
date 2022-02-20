@@ -1,0 +1,27 @@
+1. Android Services
+1.1. What are services?
+A service is a component which runs in the background without direct interaction with the user. As the service has no user interface, it is not bound to the lifecycle of an activity.
+
+Services are used for repetitive and potentially long running operations, i.e., Internet downloads, checking for new data, data processing, updating content providers and the like.
+
+Services run with a higher priority than inactive or invisible activities and therefore it is less likely that the Android system terminates them. Services can also be configured to be restarted if they get terminated by the Android system once sufficient system resources are available again.
+
+It is possible to assign services the same priority as foreground activities. In this case it is required to have a visible notification active for the related service. It is frequently used for services which play videos or music.
+
+1.2. Services and background processing
+By default, a service runs in the same process as the main thread of the application.
+
+Therefore, you need to use asynchronous processing in the service to perform resource intensive tasks in the background. A commonly used pattern for a service implementation is to create and run a new Thread in the service to perform the processing in the background and then to terminate the service once it has finished the processing.
+
+Services which run in the process of the application are sometimes called local services.
+
+1.3. Platform service and custom services
+The Android platform provides and runs predefined system services and every Android application can use them, given the right permissions. These system services are usually exposed via a specific Manager class. Access to them can be gained via the getSystemService() method. The Context class defines several constants for accessing these services.
+
+An Android application can, in addition to consuming the existing Android platform services, define and use new services. Defining your custom services allows you to design responsive applications. You can fetch the application data via it and once the application is started by the user, it can present fresh data to the user.
+
+1.4. Starting and defining custom services
+Custom services are started from other Android components, i.e., activities, broadcast receivers and other services.
+
+1.5. Foreground services
+A foreground service is a service that should have the same priority as an active activity and therefore should not be killed by the Android system, even if the system is low on memory. A foreground service must provide a notification for the status bar, which is placed under the "Ongoing" heading, which means that the notification cannot be dismissed unless the service is either stopped or removed from the foreground.

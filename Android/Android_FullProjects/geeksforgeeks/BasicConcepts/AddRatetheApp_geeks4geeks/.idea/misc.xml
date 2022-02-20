@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+<<<<<<< HEAD
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Sithembiso/AndroidStudioProjects/Android_FullProjects/geeksforgeeks/BasicConcepts/AddRatetheApp_geeks4geeks/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+      </map>
+    </option>
+  </component>
+=======
+>>>>>>> 0a821ceb531ecb0aa2310124422ad5a43e36fe86
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

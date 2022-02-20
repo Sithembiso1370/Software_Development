@@ -1,3 +1,0 @@
-Primitive types are stored as simple data types.
-Reference types are stored as objects, which are really just references to locations
-in memory.

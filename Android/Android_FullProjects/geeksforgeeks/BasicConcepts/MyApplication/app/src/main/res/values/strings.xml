@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CreateStaticShortcuts</string>
+    <string name="compose_shortcut_short_label10">Main Activity</string>
+    <string name="compose_shortcut_short_label1">Activity 1</string>
+    <string name="compose_shortcut_short_label2">Activity 2</string>
+    <string name="compose_shortcut_short_label3">Activity 3</string>
+    <string name="textcontent">Activity1</string>
+</resources>

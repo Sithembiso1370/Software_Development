@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!,Sup ARE YOU REALLY WORKING" />
+</LinearLayout>
+
+<!--
+- Make the screen layout to match its parent
+-Make the GUI component justlarge enough for its content.
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+- Add padding to the screen margins.
+
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+
+- Include a <TextView> GUI component for displaying text.
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+
+- Display the String “Hello World!”
+    android:text="Hello World!" />
+
+-->

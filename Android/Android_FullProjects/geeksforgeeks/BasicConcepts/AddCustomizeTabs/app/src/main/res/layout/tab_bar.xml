@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/colorPrimaryDark"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:onClick="onClick"
+        android:id="@+id/algo_lay"
+        android:layout_marginTop="4dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:src="@drawable/ic_algorithm"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:id="@+id/first_icon"/>
+
+        <TextView
+            android:id="@+id/commerce_first_text"
+            android:textColor="#FFFF"
+            android:layout_marginTop="3dp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Algorith"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:onClick="onClick"
+        android:id="@+id/course_lay"
+        android:layout_marginTop="4dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:src="@drawable/ic_course"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:id="@+id/sec_icon"/>
+
+        <TextView
+            android:id="@+id/commerce_sec_text"
+            android:textColor="#FFFF"
+            android:layout_marginTop="3dp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Course"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:onClick="onClick"
+        android:id="@+id/profile_lay"
+        android:layout_marginTop="4dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:src="@drawable/ic_account"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:id="@+id/third_icon"/>
+
+        <TextView
+            android:id="@+id/commerce_third_text"
+            android:textColor="#FFFF"
+            android:layout_marginTop="3dp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Profile"
+            />
+    </LinearLayout>
+
+</LinearLayout>

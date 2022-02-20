@@ -1,8 +1,0 @@
-- 
-- Enter add a new todo item at same indentation (or split it at the cursor)
-- Tab increase indentation (from anywhere in the line)
-- Ctrl+d/Cmd+d toggle item done
-- Ctrl+Shift+a/Cmd+Shift+a move done items into Archive project (repects nested tasks)
-- https://guide.taskpaper.com/getting-started
-- https://github.com/fabiospampinato/vscode-todo-plus
--https://github.com/fabiospampinato/vscode-markdown-todo

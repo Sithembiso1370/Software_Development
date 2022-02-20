@@ -1,0 +1,19 @@
+<resources>
+    <!-- string variable in xml-->
+    <string name="app_name">headfirstBeerAdviser</string>
+    <string name="find_beer">Find Beer!</string>
+    <string name="brands">No beers selected</string>
+
+    <!--array variable in xml-->
+    <string-array name="beer_colors">
+        <item>amber</item>
+        <item>brown</item>
+        <item>light</item>
+        <item>dark</item>
+        <item>Sithembiso</item>
+        <item>Khabonina</item>
+    </string-array>
+    <string name="title_activity_find_beer1">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context="FindBeerActivity">
+
+    <!--  TODO : CREATE A SPINNER TO HOLD POSSIBLE VALUES  FOR BEER TYPES-->
+    <Spinner
+        android:id="@+id/color"
+        android:layout_width="149dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:layout_marginTop="40dp"
+        android:entries="@array/beer_colors" />
+
+    <!-- TODO : CREATE A BUTTON OBJECT TO INITIATE THE FINDBEER PROCESS   -->
+    <Button
+        android:id="@+id/find_beer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:onClick="onClickFindBeer"
+        android:text="@string/find_beer"
+        android:textColor="#FFEB3B" />
+
+    <!--  TODO : CREATE A TEXTVIEW TO SHOW THE BRANDS RETURNED  -->
+    <TextView
+        android:id="@+id/brands"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:text="@string/brands" />
+
+</LinearLayout>
+
+    <!--android:id
+    This gives the component an identifying name. The id property
+    enables you to control what components do via activity code:
+    -->
+
+    <!--
+    android:layout_width, android:layout_height
+    These properties specify the width and height of the component.
+    "wrap_content" means it should be just big enough for the
+    content, and "match_parent" means it should be as wide as the
+    layout containing it:
+    -->
+
+    <!--
+    android:text
+    This tells Android what text the component should display. In the
+    case of <Button>, it’s the text that appears on the button:
+    -->
+
+    <!--
+    A spinner is the Android name for a drop-down list
+    of values. It allows you to choose a single value from a selection.
+    -->

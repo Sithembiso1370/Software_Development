@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <!-- add button after click this we can goto another activity-->
+    <TextView
+        android:id="@+id/question1_id"
+        android:layout_width="263dp"
+        android:layout_height="58dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="118dp"
+        android:text=""
+        android:textColor="@android:color/background_dark"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/first_activity_button"
+        android:layout_width="207dp"
+        android:layout_height="78dp"
+        android:layout_below="@+id/question1_id"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginEnd="114dp"
+        android:text="Next"
+        android:textColor="@android:color/background_dark"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
