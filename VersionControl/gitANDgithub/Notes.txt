@@ -1,0 +1,13 @@
+                                Git and Git hub Notes 
+
+
+1 - Initialise a new git repository or create one if it doestnt exist.
+2 - Add a File to the Staging area.
+3 - Commit a File to the local git index with a message as a note viewable when in the remote repository
+~ git commit "File name or . for all
+4 - Push an Item to the remote repo.
+~ git commit "File name or . for all
+5 - 
+6 - You can use this command to force changes to the server with the local repository (). remote repo code will be replaced with your local repo code.
+
+git push -f origin master

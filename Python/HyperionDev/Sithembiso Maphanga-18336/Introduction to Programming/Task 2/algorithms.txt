@@ -1,0 +1,38 @@
+a) An algorithm that requests a user to input their name and then
+stores their name in a variable called first_name. Subsequently, the
+algorithm should print out first_name along with the phrase “Hello,
+World”.
+
+SOLUTION:
+{
+    Request  user to input their name
+    Store the input in a variable called first_name
+    Print first_name combined with the string “Hello,World”. or (first_name + “Hello,World”)
+}
+
+
+
+
+----------------------------------------------------------------------------
+b) An algorithm that asks a user to enter their age and then stores
+their age in a variable called age. Subsequently, the algorithm
+should print out “You’re old enough” if the user’s age is over or
+equal to 18, or print out “Almost there” if the age is equal to or over
+16, but less than 18. Finally, the algorithm should print out “You’re
+just too young” if the user is younger than (and not equal to) 16.
+
+SOLUTION:
+{
+    Request age input from user
+    Store  age input into variable age
+    If user’s age is over or equal to 18
+        Print “You’re old enough”
+    Else if the age is equal to or over 16, but less than 18
+        Print “Almost there”
+    Else 
+        Print “You’rejust too young”
+}
+
+
+
+

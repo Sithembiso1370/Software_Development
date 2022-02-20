@@ -1,0 +1,33 @@
+-------------------------------------------------------------------------------
+c) Optional Bonus Task
+The Fibonacci sequence is a sequence of numbers beginning with 0 and 1, in
+which every number after the first two can be found by adding the two
+numbers before it. For example, the first 10 numbers in the Fibonacci sequence
+are as follows:
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, …
+● Create a new text file called optional_task.txt inside this folder.
+● Inside the optional_task.txt file write the pseudocode for the algorithm
+that asks the user for a number and stores that number in a variable
+called n. Then the algorithm should calculate and print out the first n
+numbers in the Fibonacci sequence.
+
+SOLUTION:
+{
+    [ Background
+            Fibonacci to get any value
+            where F is the nth fibbonacci number
+            n is the position of the number within the sequence 
+            F(n) = F(n-1)+ F(n-2)
+            F(0) = 0
+    ]
+    -----------------------------------------
+    Actual Pseudo Code Solution |
+
+    Request number from user 
+    Store number in variable called n
+    while n is greater or equal to 0
+        Store each fibbonacci number at (F(n-1)+ F(n-2)) in an array
+        Decrement the value of n by 1   
+    Print the array containing Fibonacci numbers in reverse so it starts from smallest to biggest.
+
+}  
