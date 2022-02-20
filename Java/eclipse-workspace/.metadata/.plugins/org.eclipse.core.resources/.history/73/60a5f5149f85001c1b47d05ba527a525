@@ -1,0 +1,21 @@
+package task4;
+
+import java.lang.reflect.Array;
+
+public class NoDups {
+
+	
+//	 TODO : Create a new file called NoDups.java
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+//	//   TODO : Create a method that takes an integer array argument and removes all duplicates from the array
+	public static Array removeArrdups() {
+		
+		return {2,3};
+	}
+
+}
