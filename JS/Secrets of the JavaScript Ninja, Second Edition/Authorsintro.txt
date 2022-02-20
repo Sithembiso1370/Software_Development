@@ -1,0 +1,21 @@
+It’s incredible to think of how much the world of JavaScript has changed since I first
+started writing Secrets of the JavaScript Ninja back in 2008. The world in which we write
+JavaScript now, while still being largely centered around the browser, is nearly
+unrecognizable.
+The popularity of JavaScript as a full-featured, cross-platform language has
+exploded. Node.js is a formidable platform against which countless production applications
+are developed. Developers are actually writing applications in one language—
+JavaScript—that are capable of running in a browser, on a server, and even in a native
+app on a mobile device.
+It’s more important now, than ever before, that a developer’s knowledge of the
+JavaScript language be at its absolute peak. Having a fundamental understanding of
+the language and the ways in which it can be best written will allow you to create applications
+that can work on virtually any platform, which is a claim that few other languages
+can legitimately boast.
+Unlike previous eras in the growth of JavaScript, there hasn’t been equal growth in
+platform incompatibilities. It used to be that you would salivate over the thought of
+using the most basic new browser features and yet be stymied by outdated browsers that
+had far too much market share. We’ve entered a harmonious time in which most users
+are on rapidly updated browsers that compete to be the most standards-compliant
+platform around. Browser vendors even go out of their way to develop features
+specifically targeted at developers, hoping to make their lives easier.

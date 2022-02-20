@@ -1,0 +1,119 @@
+/*
+===========================
+RESET
+===========================
+*/
+:root {
+    --primaryColor: #f1f1f1;
+    --black: #222;
+    --black2: #555;
+    --black3: #252525;
+    --black4: #000;
+    --black5: #212529;
+    --orange: #eb0028;
+    --white: #fff;
+    --grey: #959595;
+    --grey2: #666;
+    --grey3: #ccc;
+    --secondaryColor: #2b1f4d;
+    --yellow : #ffcc00;
+    --green: #59b210;
+    --gold: ? ;
+
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+
+}
+
+body {
+    /* box-sizing: border-box; */
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Main app styles */
+body>.app {
+    position: relative;
+    display: grid;
+    grid-template-rows: 100% 150% 40%;
+    height: 100%;
+    width: 100%;
+    background-color: var(--white);
+}
+
+/* Header of the App */
+body>.app>heade{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+
+body>.app>heade>.navigation{
+    background-color: var(--white);
+    color: var(--black4);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 99% 1% ;
+}
+
+body>.app>heade>.top_Main {
+    background-color: var(--black5);
+    opacity: 0.8;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+body>.app>heade>.top_Main>.main_banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 65% 35%;
+    gap: 1%;
+}
+
+body>.app>heade>.top_Main>.main_banner>.leftwidemain{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+
+/* MAIN SECTIONof the app */
+body>.app>.main_section {
+    height: 100%;
+    width: 100%;
+    background-color: var(--grey3);
+
+}
+
+
+
+
+
+
+
+
+
+
+/* Footer of the App */
+body>.app>footer {
+    height: 100%;
+    width: 100%;
+    background-color: var(--black4);
+    color: var(--white);
+}

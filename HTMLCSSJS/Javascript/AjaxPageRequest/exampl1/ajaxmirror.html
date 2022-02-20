@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+    <div id="demo">
+    <h2>The XMLHttpRequest Objec2t</h2>
+    <!-- button with the onclick method -->
+    <button type="button" onclick="LoadPage('index.html','divId')">Change Content</button>
+    </div>
+
+
+
+    <!-- START JAVASCRIPT -->
+    <script>
+    function LoadPage(source, dest) {
+        // DECLAIRE A NEW xmlhttpRequest Object into a constant variable xhttp
+        const xhttp = new XMLHttpRequest();
+
+        // SET what to do when the on load function executes 
+        xhttp.onload = function() {
+            // Setting the contents of the XMLHttpRequest.ResponceText to be the inner HTML of the div with this value ID
+            document.getElementById(dest).innerHTML = this.responseText;
+        }
+
+
+        // OPEN/ACCESS ajax_info.txt
+        xhttp.open("GET",source);
+        // SEND THE Data and recieve data
+        xhttp.send();
+    }
+
+
+    </script>
+        <!-- END JAVASCRIPT -->
+
+    </body>
+</html>

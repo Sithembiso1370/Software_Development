@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Settimeout to perform an action</title>
+</head>
+<body>
+    <div id="main" class="main container">
+        <div class="one">
+1
+        </div>
+        <div class="two">
+2
+        </div>
+        <div class="three">
+3
+        </div>
+        <div class="four">
+4
+        </div>
+    </div>   
+</body>
+<script>
+    function Settimeoutt(){
+        main.style.backgroundColor = "yellow";
+        main.style.display = "Grid";
+        
+        main.style.position = "Relative";
+        main.style.border = "12px solid orange"
+        main.style.backgroundColor = "red";
+        // 3000 is the time its going to take the function to execute but the succeding statement doesnt wait for that long as well
+        setTimeout(() => {
+            var main = document.getElementsByClassName("main");
+            console.log("main");
+
+            console.log("hello | 1");
+        }, 3000);
+        
+        main.style.backgroundColor = "yellow";
+        main.style.display = "flex";
+
+        main.style.position = "absolute";
+        main.style.border = "12px solid orange"
+        
+
+        // This prints first, immediatly in the stack but  because of the above settimeout it will print before the allocated settimeout
+
+        // console.log("how are you | 2"); 
+        setTimeout(() => {
+            console.log("how are you | 2");
+            main.style.backgroundColor = "yellowGreen";
+            main.style.backgroundColor = "yellow";
+            main.style.display = "flex";
+
+            main.style.position = "absolute";
+            main.style.border = "12px solid orange"
+        }, 500);
+    }
+    Settimeoutt();
+
+
+
+//   this is to tirst if this function prints before the first ("How are you")
+// it prints after the first
+    function anotherfunct (){
+        console.log("anotherfunct | 3");
+    }
+    anotherfunct ();
+</script>
+
+</html>

@@ -1,0 +1,6 @@
+1) Why functional Programming
+2) Higher Order Functions
+3) Map , Filter and Reduce
+4) Pure Fubctions and Immutabillity
+5) Closures
+6) Function Decoration

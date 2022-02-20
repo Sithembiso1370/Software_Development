@@ -1,0 +1,117 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+body {
+  background-image: url(../images/owl.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+ul {
+  list-style-type: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  padding: 2rem 0rem;
+  height: 14vh;
+}
+
+header .logo {
+  font-size: 2rem;
+  margin: 0rem 1.5rem;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+ul li {
+  margin-right: 1rem;
+}
+
+ul li a {
+  font-size: 1.3 rem;
+  padding: 8px 10px;
+}
+
+ul li a.active,
+ul li a:hover {
+  background-color: grey;
+  transition: 0.5s;
+  border-radius: 4px;
+}
+
+.hamburger {
+  position: absolute;
+  right: 1.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  display: none;
+}
+
+.hamburger .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  transition: 0.3s all;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+    background-position: cover;
+  }
+  .hamburger {
+    display: flex;
+    cursor: pointer;
+  }
+
+  ul {
+    flex-direction: column;
+    position: absolute;
+    top: 14vh;
+    right: -100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 86vh;
+    width: 100%;
+    align-items: center;
+    transition: right 0.3s ease-in;
+  }
+
+  ul li {
+    margin-right: 0px;
+  }
+
+  .menu-slide {
+    right: 0%;
+    transition: right 0.3s ease-in;
+  }
+
+  .cross .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .cross .bar:first-child {
+    transform: rotate(-45deg) translate(-5px, 7px);
+  }
+  .cross .bar:last-child {
+    transform: rotate(45deg) translate(-5px, -7px);
+  }
+}

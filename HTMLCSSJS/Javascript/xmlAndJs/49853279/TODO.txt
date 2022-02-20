@@ -1,0 +1,129 @@
+1. Use the chapter example code for chapter 1 to assist with creating the page layout, also refer to chapter 7 in the
+ICT1513 – Introduction to Web Design prescribed book for additional instructions.
+
+2. The layout of the page must be as follows: ``done``
+
+3. Header 1 must contain an image of the schools’ coat of arms. ``done``
+
+4. Header 2 must contain the schools’ name, either as text or an image ``done``
+
+5. Navigation bar 1 must contain the following links:
+a. School History – when was the school built, why was it built, who built it, any other historical information 
+b. School Times – start time, break times, close time, after school event times, school terms for 2021
+c. School Fees – yearly fees, monthly fees, discounts, additional fees
+d. Why this school? – Provide information as to why you selected this particular school for your project
+• The information in each of the links must be created as separate pages containing only the text that will be displayed in the article section when the user clicks the link, refer to chapter 11 in the ICT1513 – Introduction to Web Design prescribed book for additional instructions.
+• The “School History” information will be the default page when the home page opens, when the user click on
+the link any of the other links the information of that particular link must display in the article section.
+
+
+6.Navigation bar 2 must contain the following menu items:
+a. Home
+b. Request Quote c. Gallery
+• The above menu items must open in a new page with a similar layout as the home page.
+• Refer to chapter 11 in the ICT1513 – Introduction to Web Design prescribed book for additional instructions.
+
+
+
+---------undone -------
+7.Aside bar
+a. Add an interactive calendar to the side bar of the page which starts on 1 January 2021 and ends 31 December
+2030.
+
+8.Footer
+a. The footer must contain the schools contact details.
+b. Physical address, phone numbers, e-mail addresses.
+
+9.The user must be able to move back and forth between months and the default must be the current month.
+
+10. Use chapter example code in chapter 7 to create the calendar.
+
+11. Add a link called Directions to the school address in the footer section, use geolocation information to locate the co-ordinates to the school.
+
+12. Using the chapter example code in chapter 10 use the Google Maps API to display the schools location in a new window when the user clicks on the Directions link.
+
+13.Add a menu item to the navigation bar 2 called staff, when the user clicks the link a new page must open. The
+schools’ coat of arms and name must be at the top of the page followed by the title, first initial, surname and designation of at least 5 members of staff at the school. For example: Mr. T. Botha, Head Mater or Ms. A. Mnkandla, Grade 10 Math Teacher.
+
+
+14.Use the example code for reading the music information provided in the lesson for chapter 11 to create the required XML file as well as the script code.
+
+15. Add a menu item to the navigation bar 2 called school, when the user moves the mouse over the menu item submenus must display containing the same links as in navigation bar 1. Use the jQuery code provided in the chapter example for chapter 12 and add the necessary script code to your file.
+
+16.
+
+Request Quote
+1. The layout of this page must be similar to the layout of the home page; however, the aside bar must be removed.
+2. The form the user will complete must be placed in the article section.
+3. Use the chapter example code in chapter 6 to create the form.
+4. The user must select their payment option:
+a. Once off for the year b. Monthly payments
+5. The user must enter the number of children who will be attending the school:
+a. Number may not be zero (0)
+b. Number may not be more than four (4)
+6. Use chapter 2 Hands-on-Project 2-4 to help calculate school fees quote.
+a. If the user selects once off payment the discount is as follows per child:
+• 1 child = 10% off yearly school fees
+• 2 children = 12% off yearly school fees
+• 3 children = 13% off yearly school fees
+• 4 or more children = 14% off yearly school fees
+b. If user selects monthly payment the discount is as follows per child:
+• 1 child = 0% off monthly school fees
+• 2 children = 1% off monthly school fees
+• 3 children = 1,25% off monthly school fees
+• 4 or more children = 1,5% off monthly school fees
+7. The user must also enter the following information:
+a. First name b. Last name
+c. Street address
+d. Complex name (if applicable)
+e. Suburb f. Town
+g. Postal code
+h. E-mail address i. Phone number
+8. The day the quote was requested must be selected (not entered, see example code in chapter 6), the year option
+must start at 2021 and end at 2030.
+9. Each of the above fields must be validated and the form may not be submitted if all fields (except complex) have not been completed, error messages must be displayed on all fields not filled in.
+10. Once the form has been validated and submitted a new window must open with the school coat of arms and arms at the top, followed by the quoted school fees and the user information.
+11. Use chapter example code in chapter 8 to assist in completing these tasks.
+12. Write the code to ensure the e-mail address entered by the user is valid and contains all the necessary characters, display an error message if incorrect e-mail address is entered.
+13. Add username, password and verify password fields to the form.
+14. Ensure the username is a minimum of 5 characters, that the password is a minimum of 8 characters and that the verify password and password fields contain the same characters, display an error message should any of these should be entered incorrectly.
+15. Add a minimum of 5 extramural activities presented at the school which the user can select from, for example:
+netball, rugby, soccer, cricket, swimming, chess, etc. as an array called extras.
+16. Convert the extra array to a string.
+17. Using the e-mail, username and password create a profile object.
+18. Convert the profile object to a JSON string.
+19. Enhance the page, using chapter example code in chapter 9, to create cookies containing the form filed names and their values, excluding the password fields.
+
+
+17.
+Gallery Page
+1. The layout of this page must be similar to the layout of the home page; however, the navigation bar 1 and the aside bar must be removed.
+2. Use chapter example code in chapter 5 to create an image gallery containing a minimum of 5 images.
+3. The photo gallery should loop a minimum of 5 times inside the article section of the page layout.
+4. The photo gallery should have buttons on either side of the gallery allowing the user to move photos back and forward.
+5. When the user click on a specific image it should display a large version of the image in a new window with a
+“Close Window” button below the image to close the image window.
+
+18.Copy JavaScript Code to Answer Sheet
+1. Copy ONLY the JavaScript code required in the heading provided in the Answer Sheet document from your text editor and paste it under the CORRECT heading.
+2. DO NOT include ANY HTML and/or CSS code in this assignment.
+3. Layout requirements are as follows:
+a. Font size – 10px
+b. Single line spacing
+c. Remove all unnecessary empty lines from code copied from text editor to assignment template d. Do NOT make changes to the page settings provided in the Answer Sheet document
+
+
+19.Rendering Code and Making Screen Captures
+1. You need to render your code in your preferred browser and using a screen capture tool, such as “Snipping Tool”
+in Windows 8/10 make screen captures.
+2. Screen captures of the rendered code provided in the headings in the Answer Sheet document.
+3. Screen captures must CLEARLY show the how the code was executed.
+
+
+20. Additional Instructions
+1. Update the Table of content provided in the Answer Sheet document to reflect the correct information on the pages.
+2. Permission letter/Declaration form may be printed, completed, photographed with your mobile phone and entered in the Answer Sheet as images.
+3. When everything is done, all code has been copied, all images included, all question answered, the Permission Letter, Declaration Form and Rubric below have been completed and all unnecessary text have been removed save your Answer Sheet.
+4. You need to save your answer sheet using the module code, underscore, student number, underscore, assignment number as the file name e.g. ICT1512_1234567_A8.pdf
+5. Instructions to save document in PDF format:
+In MS Word, click “File” in the top right corner, click on the “Save As” link, click the drop down button next to “Word Document (*.docx)” or on the “Save As Type” button, select the PDF (*.pdf) option, click on “Save”.
