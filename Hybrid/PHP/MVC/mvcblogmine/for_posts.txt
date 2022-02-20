@@ -1,0 +1,27 @@
+1. Database
+
+++- See what table and columns we need
+- add dumy database to see if we can view staff
+
+
+Create
+- User needs to be logged in
+- Check if data is text
+- Check for empty fealds
+- If checks met do a request and create post
+
+Read 
+1. Read data from the Database
+
+
+
+Update 
+- Same as create but we need values on the post
+- Only edit his own posts
+- Check if values are not the same or empty
+
+
+
+Delete
+
+- Check if the user id is equal to the user id of the post creation

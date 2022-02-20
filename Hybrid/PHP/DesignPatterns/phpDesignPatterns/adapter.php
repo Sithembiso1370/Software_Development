@@ -1,0 +1,4 @@
+<?php
+
+
+$obj->doSomething();
