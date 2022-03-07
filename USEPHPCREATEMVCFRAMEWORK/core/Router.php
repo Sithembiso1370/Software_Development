@@ -14,6 +14,7 @@ use app\core\exception\NotFoundException;
 class Router {
      public Request $request;
      public Response $response;
+    //  Create an Array to hold the Routes
      protected array $routes = [];
 
     /**
@@ -45,6 +46,7 @@ class Router {
     public function resolve(){
         // var_dump($_SERVER);
         $path = $this->request->getPath();
+        // var_dump($this->request->getPath());
         $method = $this->request->method();
         $callback = $this->routes[$method][$path] ?? false;
         // $full_request = $this->request->getRequest();
@@ -54,8 +56,9 @@ class Router {
 
         // CHECK IF THE CALLBACK IS OFF STRING TYPE
         if (is_string($callback)) {
+            
             // Render the the view passed in
-            return $this->renderView($callback);
+            return Application::$app->view->renderView($callback);
         }
 
         // CHECK IF THE CALLBACK IS OFF Array TYPE and get the first indexed item
@@ -64,6 +67,7 @@ class Router {
             /**
              * @var $controller \app\core\controller
              */
+            // var_dump($callback);
             $controller = new $callback[0];
             $controller->action = $callback[1];
             Application::$app->controller = $controller;
@@ -78,14 +82,5 @@ class Router {
 
         // echo call_user_func($callback);
         return call_user_func($callback, $this->request, $this->response);
-    }
-
-    public function renderView($view,$params = []){
-        return Application::$app->view->renderView($view, $params);
-    }
-
-    // // DESIGN Lyout
-    public function renderViewOnly($view, $params = []){
-        return Application::$app->view->renderViewOnly($view, $params);
     }
  }

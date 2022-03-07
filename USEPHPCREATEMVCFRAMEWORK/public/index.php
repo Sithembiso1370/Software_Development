@@ -8,7 +8,7 @@
 //  declare(strict_types=1);
 
 
-// Get access to the namespaceS CLASS
+// Get access to the necessary namespaces
 
 // Get Access to the Namespaces  Controller classes 
 use app\controllers\SiteController;
@@ -30,7 +30,9 @@ $dotenv->load();
 
 // CREATE A CONFIG OBJECT WITH THE ENVIROMENT VARIABLES LOADED ABOVE
 $config = [
+    //  Configure the user class
     'userClass' => \app\models\User::class,
+    // Configure the Environment Variables
     'db' => [
         'dsn' => $_ENV['DB_DSN'],
         'user' => $_ENV['DB_USER'],
@@ -38,15 +40,16 @@ $config = [
     ]
 ];
 
-// Onlaod of the page : I need to Declaire a new instance of a class named Application
-// And Pass it the Current Data
+// Onlaod of the page : I need to Declaire a new instance of a class named Application And Pass it the Current:
+// Directory of the Index Page
+// Current Configurations Array
 $app =  new Application(dirname(__DIR__),$config);
 
 
 // Registering Routes
 
 // First Routes : Site Controller routes
-$app->router->get("/", [SiteController::class, 'home']);
+$app->router->get("/", [SiteController::class, 'index']);
 $app->router->get("/contact", [SiteController::class, 'contact']);
 
 
@@ -55,11 +58,17 @@ $app->router->get("/login", [AuthController::class, 'login']);
 $app->router->get("/register", [AuthController::class, 'register']);
 $app->router->post("/login", [AuthController::class, 'login']);
 $app->router->post("/register", [AuthController::class, 'register']);
+$app->router->get("/logout", [AuthController::class, 'logout']);
 
 
 // Contact Form Routes
-$app->router->post("/contact", [SiteController::class, 'handleContact']);
+$app->router->get("/contact", [SiteController::class, 'contact']);
+$app->router->post("/contact", [SiteController::class, 'contact']);
 $app->router->get("/dashboard", [SiteController::class, 'dashboard']);
+
+// Protected Routes
+$app->router->get("/profile", [AuthController::class, 'profile']);
+$app->router->get("/admin", [AuthController::class, 'admin']);
 
 
 

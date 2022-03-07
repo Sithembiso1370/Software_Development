@@ -9,7 +9,7 @@
     define('APPROOT', dirname(dirname(__FILE__)));
 
     //URLROOT (Dynamic links) : possibly for navigation
-    define('URLROOT', 'http://localhost/ntpromvcframework');
+    define('URLROOT', dirname(__DIR__));
 
     //Sitename
     define('SITENAME', 'MVC Framework');

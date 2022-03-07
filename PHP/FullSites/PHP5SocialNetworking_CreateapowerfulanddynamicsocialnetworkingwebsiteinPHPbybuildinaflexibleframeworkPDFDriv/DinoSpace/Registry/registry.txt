@@ -1,0 +1,40 @@
+The registry object itself is very straightforward; it needs to contain two arrays, one
+to store any settings and data we wish to centrally store within the registry, and one
+to store the core objects that we wish to access via the registry.
+
+
+Registry objects
+The registry object itself is the easy bit; its purpose is to hold data and other objects.
+It is the objects that will be held in here that will be more complicated. The objects
+that the registry will use will include:
+
+    • Database access
+    • User authentication
+    • Template management
+    • E-mail sending
+    • URL processing
+
+
+Database
+Our database access class (registry/mysqldb.class.php) should provide us with a
+basic level of abstraction when accessing the database; this also allows us to simplify
+certain tasks such as inserting records into a database, performing updates, and if we
+wanted to, even tasks such as creating and editing database tables.
+
+The class needs to be able to:
+
+    • Connect to at least one database
+    • Manage connections to multiple databases where more than one have been
+    connected to
+    • Execute queries
+    • Return result sets from executed queries
+    • Return information from executed queries, such as the ID of the record that
+    was last inserted into the database
+    • Cache the results of queries (the main use of this is to integrate a result set
+    with the view; this would be done by caching the results, and associating it
+    with a section in the templates)
+    Many of the functions of this class will be simple wrappers for existing MySQL
+    database functions, with some additions, and allow us to include more error
+    handling should we wish.
+
+    

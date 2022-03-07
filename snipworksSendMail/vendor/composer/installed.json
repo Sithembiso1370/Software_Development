@@ -1,0 +1,45 @@
+{
+    "packages": [
+        {
+            "name": "snipworks/php-smtp",
+            "version": "v2.0.4",
+            "version_normalized": "2.0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/snipworks/php-smtp.git",
+                "reference": "06129fa0632b5be3ddbc91392e48352faaf31140"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/snipworks/php-smtp/zipball/06129fa0632b5be3ddbc91392e48352faaf31140",
+                "reference": "06129fa0632b5be3ddbc91392e48352faaf31140",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "ext-openssl": "*",
+                "php": ">=5.3"
+            },
+            "time": "2020-09-06T10:10:40+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Snipworks\\Smtp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Simple PHP SMTP Mail Send Script",
+            "support": {
+                "issues": "https://github.com/snipworks/php-smtp/issues",
+                "source": "https://github.com/snipworks/php-smtp/tree/master"
+            },
+            "install-path": "../snipworks/php-smtp"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

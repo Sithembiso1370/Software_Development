@@ -29,7 +29,7 @@ class Form
 
     public function field(Model $model, $attribute)
     {
-        return new Field($model, $attribute);
+        return new InputField($model, $attribute);
     }
 
 }

@@ -76,7 +76,7 @@ font-family: 'Saira Stencil One', cursive; */
 body {
     display: block;
     height: 1080px;
-    width: 1700px ;
+    width: 100% ;
     margin: 0px;
     padding: 0px;
     background: #ccd6f4;
@@ -136,7 +136,6 @@ body {
     display: grid;
     gap: 1%;
     grid-template-columns: 78% 20%;
-    overflow: scroll;
 
 }
 
@@ -234,7 +233,6 @@ input:hover {
     grid-template-rows: repeat(2,50%);
     color: black;
     font-size: 1.5rem;
-    overflow: hidden;
 
 }
 
@@ -455,7 +453,7 @@ table {
     position: relative;
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 /* thead {
@@ -789,13 +787,13 @@ i:hover {
 <span class="menuIcon" id="menuIcon"></span>
         <div  class="sidebar" id="sidebar">
             <nav>
-                <a href="<?php echo URLROOT ?>/pages/Homepage"
+                <a href="Homepage"
                         ><i class="fas fa-chart-area"></i><span>Dashboard</span></a
                     >
-                    <a href="<?php echo URLROOT ?>/pages/transactions"
+                    <a href="transactions"
                         ><i class="fas fa-shipping-fast fa-lg"></i><span>Transactions</span></a
                     >
-                    <a href="index.php"
+                    <a href=""
                         ><i class="fas fa-shipping-fast fa-lg"></i><span>LogOut</span></a
                     >
             </nav>
@@ -919,38 +917,14 @@ i:hover {
             </div>
         </div>
 </body>
-<!-- <script src="transaction.js"></script> -->
-<!-- <script src="search.js"></script> -->
+<?php       include_once '../views/functionality/transactions_js.php' ;                       ?>
 <script>
 // other JavaScript code before ...
 
 
 // Creating a load event on theDOM
 window.addEventListener("load",()=>{
-    // testing to see if the window has loaded 
-    // console.log("window loaded");
-    // Capturing a PHP Variable into a javascript json object
-    var phpvar_2_js_variable = <?= json_encode($data,JSON_HEX_TAG); ?>;
-    // console.log(phpvar_2_js_variable['usermodel'].length);
-    // console.log(phpvar_2_js_variable['everything'][1].length);
-
-
-     var table = ""; 
-     for (let index = 0; index < 20; index++) {
-        //  const element = array[index];
-        table += "<tr scope='col'>";
-        table += "<td>"+phpvar_2_js_variable['usermodel'][index]["submitted_on"] +"</td>";
-        table += "<td>"+phpvar_2_js_variable['usermodel'][index]["qoute_name"] +"</td>";
-        table += "<td>"+phpvar_2_js_variable['usermodel'][index]["qoute_no"] +"</td>";
-        table += "<td>"+phpvar_2_js_variable['usermodel'][index]["s_qoute_reference"] +"</td>";
-        table += "<td>"+phpvar_2_js_variable['usermodel'][index]["qoute_items"] +"</td>";
-        table += "<td>"+phpvar_2_js_variable['usermodel'][index]["Supplier_name"] +"</td>";
-        table += "<td><button class='Editbtn'>Edit</button></td>";
-        table += "<td><button class='deletebtn'>Delete</button></td>";
-        table += "</tr>"
-     }
-    //  console.log(table);
-     document.getElementById("mytbody").innerHTML = table;
+    loadData();
 });
 
 
@@ -958,12 +932,102 @@ window.addEventListener("load",()=>{
 var search_inp = document.getElementById("searchinput");
 
 search_inp.addEventListener('keyup',(event)=>{
-    // console.log("key up");
-    // Capturing a PHP Variable into a javascript json object
+
+    // // Capturing a PHP Variable into a javascript json object
     var phpvar_2_js_variable = <?= json_encode($data,JSON_HEX_TAG); ?>;
-    // console.log(phpvar_2_js_variable['usermodel'].length);
-    // console.log(event.target.value);
+
     var my_str = event.target.value;
+    // var count_rows = 0;
+
+    // First Load the table data
+    LoadTableData(phpvar_2_js_variable,my_str,"mytbody");
+
+    //  2nd Populate side nave
+    var everytable = <?= json_encode($data['everything'],JSON_HEX_TAG); ?>;
+    // SQ
+    setSearchDiv_data(everytable[0],my_str,'supplierquotesextra','qoute_name');
+    // CQ
+    setSearchDiv_data(everytable[1],my_str,'customerquoteextra','qoute_name');
+    // SPO
+    setSearchDiv_data(everytable[2],my_str,'supplierpurchaseorderextra','order_name');
+    // CPO
+    setSearchDiv_data(everytable[3],my_str,'customerpurchaseorderextra','purchaseorder_name');
+    // SI
+    setSearchDiv_data(everytable[4],my_str,'supplierinvoiceextra','invoice_name');
+    // CI
+    setSearchDiv_data(everytable[5],my_str,'customerinvoicesectra','invoice_name');
+    // SDN
+    setSearchDiv_data(everytable[6],my_str,'supplierdeliveryextra','deliverynote_name');
+    // CDN
+    setSearchDiv_data(everytable[7],my_str,'customerdeliveryextra','deliverynote_name');
+});
+
+
+
+function loadData(){
+        // Capturing a PHP Variable into a javascript json object
+        var phpvar_2_js_variable = <?= json_encode($data,JSON_HEX_TAG); ?>;
+
+        var table = ""; 
+        for (let index = 0; index < 20; index++) {
+        //  const element = array[index];
+        table += "<tr scope='col'>";
+        table += "<td>"+phpvar_2_js_variable['usermodel'][index]["submitted_on"] +"</td>";
+        table += "<td>"+phpvar_2_js_variable['usermodel'][index]["qoute_name"] +"</td>";
+        table += "<td>"+phpvar_2_js_variable['usermodel'][index]["qoute_no"] +"</td>";
+        table += "<td id='ntpro_id'>"+phpvar_2_js_variable['usermodel'][index]["s_qoute_reference"] +"</td>";
+        table += "<td>"+phpvar_2_js_variable['usermodel'][index]["qoute_items"] +"</td>";
+        table += "<td>"+phpvar_2_js_variable['usermodel'][index]["Supplier_name"] +"</td>";
+        table += "<td><button class='Editbtn'>Edit</button></td>";
+        table += "<td><button class='deletebtn'>Delete</button></td>";
+        table += "</tr>"
+        }
+        //  console.log(table);
+        document.getElementById("mytbody").innerHTML = table;
+
+
+        // Creating  Hover Key up event 
+        // Creating a search keyUp event 
+        var search_inp = document.getElementsByTagName('tr');
+
+        var rows = [];
+        for (let index = 0; index < search_inp.length; index++) {
+            search_inp[index].addEventListener('mouseover',(event)=>{
+                console.log(event.target.parentElement);
+                if (event.target.getAttribute('id') == 'ntpro_id') {
+
+                    
+                    var everytable = <?= json_encode($data['everything'],JSON_HEX_TAG); ?>;
+
+                    var my_str = event.target.innerHTML;
+                    var count_rows = 0;
+
+                    // SQ
+                    setDiv_data(everytable[0],my_str,"supplierquotesextra",'qoute_name');  
+                    // CQ
+                    setDiv_data(everytable[1],my_str,"customerquoteextra",'qoute_name');  
+                    // SPO
+                    setDiv_data(everytable[2],my_str,"supplierpurchaseorderextra",'order_name');    
+                    // CPO
+                    setDiv_data(everytable[3],my_str,"customerpurchaseorderextra",'purchaseorder_name'); 
+                    // SI
+                    setDiv_data(everytable[4],my_str,"supplierinvoiceextra",'invoice_name'); 
+                    // CI
+                    setDiv_data(everytable[5],my_str,"customerinvoicesectra",'invoice_name'); 
+                    // SDN
+                    setDiv_data(everytable[6],my_str,"supplierdeliveryextra",'deliverynote_name'); 
+                    // CDN
+                    setDiv_data(everytable[7],my_str,"customerdeliveryextra",'deliverynote_name'); 
+
+                } else {
+                    console.log('hovering above UNKNOWN');
+                }
+                
+            })
+        }
+}
+
+function LoadTableData(phpvar_2_js_variable,my_str,$tbody){
     var count_rows = 0;
 
     var table = ""; 
@@ -1002,100 +1066,42 @@ search_inp.addEventListener('keyup',(event)=>{
         }
     }
     else if(count_rows > 20){
-        // console.log("search records less than 30")
-        // for (let index = 0; index < count_rows - 20; index++) {
-        //     var add_counter = 1
-        //     var elem = document.getElementById("row"+20+add_counter);
-        //     elem.parentNode.removeChild(elem); 
-        //     add_counter += 1  
-        // }
     }
-    //  console.log("count of rows for search = ",count_rows)
-    //  LOG THE NUMBER OF ROWS TO TEST HOW MANY ROWS SATISFY THE ABOVE QUERY
-    //  console.log(count_rows);
-     document.getElementById("mytbody").innerHTML = table;
+     document.getElementById($tbody).innerHTML = table;
+}
+
+function setDiv_data(table,my_str,my_div_id,col_name){
+    count_rows = 0;
+    var my_doc;
+    var spo_side = document.getElementById(my_div_id);
+
+    for (let index = 0; index < table.length; index++) {
+
+        if (table[index]["s_qoute_reference"].toLowerCase().includes(my_str.toLowerCase())) {
+            count_rows += 1;
+            my_doc = table[index][col_name];
+            spo_side.innerHTML = '<a href='+my_doc+">"+my_doc+"</a>";
+        }
+
+    }
+}
 
 
-    //  Now Populate side nave 
-    var everytable = <?= json_encode($data['everything'],JSON_HEX_TAG); ?>;
-    // SQ
-    for (let index = 0; index < everytable[0].length; index++) {
-        if (everytable[0][index]["qoute_name"].toLowerCase().includes(my_str.toLowerCase()) || everytable[0][index]["s_qoute_reference"].toLowerCase().includes(my_str.toLowerCase()) || everytable[0][index]["qoute_items"].toLowerCase().includes(my_str.toLowerCase())) {
-            count_rows += 1;
-            // console.log("supplier quotes length = ",everytable[0][index]['qoute_name']);
-            var my_doc = everytable[0][index]['qoute_name']
-            var sq_side = document.getElementById("supplierquotesextra");
-            sq_side.innerHTML = my_doc;
-        }
-    }
-    // CQ
-    for (let index = 0; index < everytable[1].length; index++) {
-        if (everytable[1][index]["qoute_name"].toLowerCase().includes(my_str.toLowerCase()) || everytable[1][index]["s_qoute_reference"].toLowerCase().includes(my_str.toLowerCase()) || everytable[1][index]["qoute_items"].toLowerCase().includes(my_str.toLowerCase())) {
-            count_rows += 1;
-            var my_doc = everytable[1][index]['qoute_name']
-            var sq_side = document.getElementById("customerquoteextra");
-            sq_side.innerHTML = my_doc;
-        }
-    }
-    // SPO
-    for (let index = 0; index < everytable[2].length; index++) {
-        if (everytable[2][index]["order_name"].toLowerCase().includes(my_str.toLowerCase()) || everytable[2][index]["s_qoute_reference"].toLowerCase().includes(my_str.toLowerCase()) || everytable[2][index]["order_no"].toLowerCase().includes(my_str.toLowerCase())) {
-            count_rows += 1;
-            var my_doc = everytable[2][index]['order_name']
-            var sq_side = document.getElementById("supplierpurchaseorderextra");
-            sq_side.innerHTML = my_doc;
-        }
-    }
-    // CPO
-    for (let index = 0; index < everytable[3].length; index++) {
-        if (everytable[3][index]["purchaseorder_name"].toLowerCase().includes(my_str.toLowerCase()) || everytable[3][index]["s_qoute_reference"].toLowerCase().includes(my_str.toLowerCase()) || everytable[3][index]["p_order_no"].toLowerCase().includes(my_str.toLowerCase())) {
-            count_rows += 1;
-            var my_doc = everytable[3][index]['purchaseorder_name']
-            var sq_side = document.getElementById("customerpurchaseorderextra");
-            sq_side.innerHTML = my_doc;
-        }
-    }
-    // SI
-    for (let index = 0; index < everytable[4].length; index++) {
-        if (everytable[4][index]["invoice_name"].toLowerCase().includes(my_str.toLowerCase()) || everytable[4][index]["s_qoute_reference"].toLowerCase().includes(my_str.toLowerCase()) || everytable[4][index]["invoice_no"].toLowerCase().includes(my_str.toLowerCase())) {
+function setSearchDiv_data(everytable_index,my_str,my_div_id,col_name){
+    count_rows = 0;
+    var my_doc;
+
+    for (let index = 0; index < everytable_index.length; index++) {
+
+        if (everytable_index[index][col_name].toLowerCase().includes(my_str.toLowerCase()) || everytable_index[index]["s_qoute_reference"].toLowerCase().includes(my_str.toLowerCase())) {
             count_rows += 1;
             // console.log("supplier quotes length = ",everytable[2][index]['purchaseorder_name']);
-            var my_doc = everytable[4][index]['invoice_name']
-            var sq_side = document.getElementById("supplierinvoiceextra");
-            sq_side.innerHTML = my_doc;
+            var my_doc = everytable_index[index][col_name]
+            var my_div = document.getElementById(my_div_id);
+            my_div.innerHTML = my_doc;
         }
     }
-    // CI
-    for (let index = 0; index < everytable[5].length; index++) {
-        if (everytable[5][index]["invoice_name"].toLowerCase().includes(my_str.toLowerCase()) || everytable[5][index]["s_qoute_reference"].toLowerCase().includes(my_str.toLowerCase()) || everytable[5][index]["invoice_no"].toLowerCase().includes(my_str.toLowerCase())) {
-            count_rows += 1;
-            // console.log("supplier quotes length = ",everytable[2][index]['purchaseorder_name']);
-            var my_doc = everytable[5][index]['invoice_name']
-            var sq_side = document.getElementById("customerinvoicesectra");
-            sq_side.innerHTML = my_doc;
-        }
-    }
-    // SDN
-    for (let index = 0; index < everytable[6].length; index++) {
-        if (everytable[6][index]["deliverynote_name"].toLowerCase().includes(my_str.toLowerCase()) || everytable[6][index]["s_qoute_reference"].toLowerCase().includes(my_str.toLowerCase()) || everytable[6][index]["deliverynote_no"].toLowerCase().includes(my_str.toLowerCase())) {
-            count_rows += 1;
-            // console.log("supplier quotes length = ",everytable[2][index]['purchaseorder_name']);
-            var my_doc = everytable[6][index]['deliverynote_name']
-            var sq_side = document.getElementById("supplierdeliveryextra");
-            sq_side.innerHTML = my_doc;
-        }
-    }
-    // CDN
-    for (let index = 0; index < everytable[7].length; index++) {
-        if (everytable[7][index]["deliverynote_name"].toLowerCase().includes(my_str.toLowerCase()) || everytable[7][index]["s_qoute_reference"].toLowerCase().includes(my_str.toLowerCase()) || everytable[7][index]["deliverynote_no"].toLowerCase().includes(my_str.toLowerCase())) {
-            count_rows += 1;
-            // console.log("supplier quotes length = ",everytable[2][index]['purchaseorder_name']);
-            var my_doc = everytable[7][index]['deliverynote_name']
-            var sq_side = document.getElementById("customerdeliveryextra");
-            sq_side.innerHTML = my_doc;
-        }
-    }
-});
+}
 
 </script>
 </html>

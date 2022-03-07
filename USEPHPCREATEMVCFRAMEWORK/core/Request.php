@@ -20,6 +20,7 @@ class Request {
             # code...
             return $path;
         }
+       
 
         return substr($path,  0, $position);
     }

@@ -27,6 +27,14 @@ font-family: 'Saira Stencil One', cursive; */
     margin: 0;
     transition: all 0,25s ease-in-out;
 }
+
+html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
 a {
     text-decoration: none;
 }
@@ -194,7 +202,7 @@ body {
     padding: 0px;
     display: grid;
     height: 1080px;
-    width: 1700px ;
+    width: 100% ;
     grid-template-columns: 64.5% 34.5%;
     background: #ccd6f4;
     gap: 1%;
@@ -701,13 +709,13 @@ tr:hover {
 <span class="menuIcon" id="menuIcon"></span>
         <div  class="sidebar" id="sidebar">
             <nav>
-                <a href="<?php echo URLROOT ?>/pages/Homepage" id="homepagelink"
+                <a href="Homepage" id="homepagelink"
                     ><i class="fas fa-chart-area"></i><span>Dashboard</span></a
                 >
-                <a href="<?php echo URLROOT."/pages/transactions";?>" id="transpagelink"
+                <a href="transactions";?>" id="transpagelink"
                     ><i class="fas fa-shipping-fast fa-lg"></i><span>Transactions</span></a
                 >
-                <a href="index.php" id="logoutpagelink"
+                <a href="" id="logoutpagelink"
                     ><i class="fas fa-shipping-fast fa-lg"></i><span>LogOut</span></a
                 >
             </nav>

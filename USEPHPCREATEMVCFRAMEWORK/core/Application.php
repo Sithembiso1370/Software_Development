@@ -2,8 +2,8 @@
 // require_once "Router.php";
 namespace app\core;
 
-use Responce;
-
+use app\core\Response;
+use app\models\ContactForm;
 
 /**
  * @author Sithembiso Maphanga
@@ -27,14 +27,14 @@ class Application {
     public Response $response;
     public Session $session;
     public Database $db;
-    public ?UserModel $user;
+    public ?userModel $user;
     public ?Controller $controller = null;
     public View $view;
 
     // Create the constructor of the function that takes in the root path and enironment config variables 
     public function __construct($rootPath,array $config)
     {
-        $this->user = null;
+
         $this->userClass = $config['userClass'];
         // Get Project Root Directory and make global singleton
         self::$ROOT_DIR = $rootPath;
@@ -59,20 +59,22 @@ class Application {
 
          $this->view = new View();
 
-         $userId = Application::$app->session->get('user');
+         $userId = $this->session->get('user');
          if ($userId) {
              $key = $this->userClass::primaryKey();
              $this->user = $this->userClass::findOne([$key => $userId]);
          }
+         else{
+            $this->user = null;
+         }
     }
 
     public function run(){
-        // echo $this->router->getURL();
         $this->triggerEvent(self::EVENT_BEFORE_REQUEST);
         try {
             echo $this->router->resolve();
         } catch (\Exception $e) {
-            echo $this->router->renderView('_error', [
+            echo Application::$app->view->renderView('_error', [
                 'exception' => $e,
             ]);
         }
@@ -100,6 +102,18 @@ class Application {
         $primarykey = $user->primaryKey() ;
         $primaryValue = $user->{$primarykey};
         $this->session->set('user', $primaryValue);
+        return true;
+    }
+
+    public function sendForm(DbModel $contactForm){
+        $this->user = $contactForm;
+        if (!$this->user) {
+            # code...
+            return false;
+        }
+        
+        $this->session->set('form', $contactForm);
+        return true;
     }
 
     public static function isGuest()

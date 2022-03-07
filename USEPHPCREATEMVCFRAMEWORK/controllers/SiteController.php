@@ -13,23 +13,36 @@ namespace app\controllers;
 use app\core\Application;
 use app\core\Controller;
 use app\core\Request;
+use app\core\Response;
+use app\models\ContactForm;
+use app\models\User;
 
 class SiteController extends Controller {
 
 
-    public  function home(){
+    public  function index(){
         $params = [
             'name' => "Sithembiso"
         ];
 
-        return Application::$app->router->renderView('home',$params);
+        return Application::$app->view->renderView('index',$params);
     }
 
-    public function contact(){
-        $params = [
-            'response' => 'Fill in all Fealds'
-        ];
-        return $this->render('contact',$params);
+    public function contact(Request $request, Response $response){
+            $contactForm = new ContactForm();   
+            // $user = contactForm::findOne(['email' => $this->email]);
+    
+            if ($request->method() === 'post') {
+                $contactForm->loadData($request->getBody());
+                if ($contactForm->validate() && $contactForm->send()) {
+                    Application::$app->session->setFlash('success', 'Form Sent');
+                    return $response->redirect('/contact');
+                }
+            }
+
+            return $this->render('contact', [
+                'model' => $contactForm
+            ]);
     }
 
     // Controller Method
@@ -42,7 +55,7 @@ class SiteController extends Controller {
             $params[$key] = $value;
         }
 
-        return $this->render('home',$params);
+        return $this->render('index',$params);
     }
 
 

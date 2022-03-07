@@ -15,6 +15,7 @@ use app\core\Controller;
 use app\core\Request;
 use app\core\Response;
 use app\models\LoginForm;
+use app\models\ContactForm;
 use app\models\loginModel;
 use app\core\middlewares\AuthMiddleware;
 use app\models\User;
@@ -22,6 +23,7 @@ use app\models\User;
 
 class AuthController extends Controller {
 
+    // 
     public function __construct()
     {
         $this->registerMiddleware(new AuthMiddleware(['profile']));
@@ -29,13 +31,18 @@ class AuthController extends Controller {
 
     public  function login(Request $request, Response $response){
         $loginForm = new LoginForm();
+
+        
+
         if ($request->method() === 'post') {
             $loginForm->loadData($request->getBody());
             if ($loginForm->validate() && $loginForm->login()) {
+                Application::$app->session->setFlash('success', 'Welcome Back '.  Application::$app->session->get('user'));
                 Application::$app->response->redirect('/');
-                return;
+                exit;     
             }
         }
+
         $this->setLayout('auth');
         return $this->render('login', [
             'model' => $loginForm
@@ -43,28 +50,28 @@ class AuthController extends Controller {
     }
 
 
+
+
     public function register(Request $request)
     {
-        $registerModel = new User();
+        $user = new User();
 
 
         if ($request->method() === 'post') {
 
-            $registerModel->loadData($request->getBody());
+            $user->loadData($request->getBody());
 
             
-            if ($registerModel->validate() && $registerModel->save()) {
+            if ($user->validate() && $user->save()) {
                 Application::$app->session->setFlash('success', 'Thanks for registering');
-
-                return $this->render('login', [
-                    'model' => $registerModel
-                ]);
+                Application::$app->response->redirect('/');
+                exit;
             }
 
         }
         $this->setLayout('auth');
         return $this->render('register', [
-            'model' => $registerModel
+            'model' => $user
         ]);
     }
 
@@ -83,11 +90,6 @@ class AuthController extends Controller {
                 Application::$app->response->redirect('/login');  
                 return 'success';       
             }
-
-            // echo '<pre>';
-            // var_dump($registerModel->errors);
-            // echo '</pre>';
-
         }
         $this->setLayout('auth');
         return $this->render('tulip',[
@@ -98,10 +100,40 @@ class AuthController extends Controller {
 
     public function profile()
     {
-        return $this->render('profile');
+        $user = new User();
+        // var_dump($user);
+
+        // GET SESSION VARIABLES STORED
+        $session_vars = Application::$app->user;
+        var_dump($session_vars);
+
+        $this->setLayout('auth');
+        return $this->render('profile',[
+            'model' => $user,
+            'session_vars' => $session_vars
+        ]); 
+    }
+
+    public function admin()
+    {
+        $user = new User();
+        // var_dump($user);
+
+        // GET SESSION VARIABLES STORED
+        $session_vars = Application::$app->user;
+        var_dump($session_vars);
+
+        $this->setLayout('auth');
+        return $this->render('admin',[
+            'model' => $session_vars
+ 
+        ]); 
     }
 
 
-
-
+    public function logout()
+    {
+        Application::$app->session->remove('user');
+        return $this->render('index');
+    }
 }

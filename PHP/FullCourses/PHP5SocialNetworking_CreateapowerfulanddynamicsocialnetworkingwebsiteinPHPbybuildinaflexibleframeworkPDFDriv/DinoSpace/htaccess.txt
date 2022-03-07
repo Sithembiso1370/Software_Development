@@ -1,0 +1,21 @@
+Let's go through this file, line by line.
+1. First, we tell Apache that the index.php file should deal with any 404 errors
+(file not found).
+2. The index.php file is the default file in the directory, so if someone visits the
+folder on the web server with our site in, and doesn't specify a file, index.
+php is called automatically.
+3. The IfModule block is conditional: the rules only apply if the module
+mod_rewrite is installed.
+4. If it is installed, we enable the rewrite engine.
+5. If the user is trying to request a file, don't follow the rewrite rule (without
+this, uploaded files and images wouldn't be displayed as even these requests
+would be routed through our index.php file).
+6. If the user is trying to access a directory that exists, then the rule isn't
+followed again.
+7. Finally, we have the rewrite rule, which takes the users request, and
+interoperates it as the page $_GET parameter for our index.php file to
+process. The rule takes everything from the URL (apart from the domain,
+and any folders our site may be stored within) and appends it to the page get
+variable. This line also takes any user-specified query strings (for example,
+&somefield=somevalue) and appends it to the URL (QSA), and then ignores
+other rules if that rule was used (L).

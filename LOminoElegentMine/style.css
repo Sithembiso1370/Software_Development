@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 95% 120% 30%;
+}
+
+header {
+    position: relative;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    height: 100%;
+    width: 100%;
+}
+
+aside {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+
+aside>a {
+    width: 100%;
+    height: 100%;
+    background-image: url("./images/brand.png");
+    background-repeat: no-repeat;
+}
+aside>div {
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+
+aside>div>.span1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    padding: 10px;
+}
+aside>div>.span2 {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    padding: 10px;
+}
+aside>div>.span3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 10px;
+}
+
+
+main {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 5% 5% 90%;
+}
+main>.mainsearch {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+main>.mainsearch>input {
+    width: 60%;
+    height: 80%;
+    border: 2px solid whitesmoke;
+    border-radius: 7%;
+}
+
+/* stolem styles*/
+
+.bottle{
+    top: 1%;
+    left: 20%;
+    opacity: 0;
+    animation: fade-in ease-in .5s 2.5s forwards;
+}
+
+
+
+.rose{
+    top: 20%;
+    z-index: -1;
+    opacity: 0;
+    animation: fade-in ease-in .5s 3s forwards;
+}
+
+
+
+
+
+@keyframes fade-in {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes fade-in-down {
+    from{
+        transform: translateY(-2.5rem);
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-left{
+    from{
+        transform: translate(100rem, -50%);
+    }
+    to{
+        transform: translate(29rem, -50%);
+        opacity: 1;
+    }
+}
