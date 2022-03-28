@@ -1,0 +1,157 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Omino</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        main>.navigations {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        main>.navigations>li {
+            width: 100%;
+            list-style: none;
+        }
+        main>.navigations>li>a {
+            width: 100%;
+            text-decoration: none;
+        }
+
+        main>.bannerArea {
+            position: relative;
+            display: grid;
+            
+        }
+
+        main>.bannerArea>.description {
+            position: absolute; 
+            background-color: rgba(165, 42, 42, 0.26);
+            height: 80%;
+            width: 90%;
+            top: 0%;
+            left: 15%;
+            display: grid;
+            grid-template-rows: 20% 60% 20%;
+
+        }
+
+        main>.bannerArea>.description>a {
+            opacity: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: red;
+            width: 25%;
+            height: 50%;
+            right: 105px;
+            border-radius: 4rem;
+            color: whitesmoke;
+            animation: fade-in-down ease-in .5s 1.5s forwards;
+            z-index: 2;
+        }
+        main>.bannerArea>.image-wrapper {
+            position: relative; 
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        main>.bannerArea>.image-wrapper::before{
+            content: "";
+            background-color: aquamarine;
+        }
+
+        main>.bannerArea>.image-wrapper>img {
+            position: relative;
+        }
+
+        .main{
+            position: relative;
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-rows: 33%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <aside>
+            <a href="./index.html" class="logo">
+                Q 
+            </a>
+            <div class="slidebtnz">
+                <span class="span1">4</span>
+                <span class="span2"><hr></span>
+                <span class="span3">1</span>
+            </div>
+
+        </aside>
+
+        <main>
+            <div class="mainsearch"><input type="text" placeholder="SEARCH"></div>
+            <!-- START NAVIGATION -->
+            <div class="navigations">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Sign in</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Cart</a>
+                </li>
+            </div>
+            <!-- END NAVIGATION -->
+            <div class="bannerArea">
+                <div class="description">
+                    <h1 class="item-title">SIMPLICITY IS ELEGENCE</h1>
+                    <p class="item-description">
+                        There are few things that make you feel more powerful than being sexy. We wanted to take that feeling and turn it into a fragrance.
+                    </p>
+                    <a href="#" class="btn">View Products</a>
+                </div>
+                <div class="image-wrapper">
+                    <img src="./images/rose.png" alt="" class="rose">
+                    <img src="./images/bottle.png" alt="" class="bottle">
+
+                </div>
+            </div>
+        </main>
+    </header>
+
+
+    <div class="main">
+        <div class="trending">
+            Trending All
+        </div>
+        <div class="Womens">
+            Trending  Womens
+        </div>
+        <div class="Mens">
+            Trending Mens
+        </div>
+    </div>
+    <div class="footer">
+D
+    </div>
+</body>
+</html>

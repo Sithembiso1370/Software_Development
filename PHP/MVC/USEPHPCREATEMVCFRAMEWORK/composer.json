@@ -2,7 +2,7 @@
     "name": "sithembiso/usephpcreatemvcframework",
     "autoload": {
         "psr-4": {
-            "app\\": "."
+            "app\\": "./"
         }
     },
     "authors": [
@@ -12,6 +12,6 @@
         }
     ],
     "require": {
-        "vlucas/phpdotenv": "^5.4"
+        "twbs/bootstrap": "5.1.3"
     }
 }

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "snipworks/php-smtp": "^2.0"
+    }
+}

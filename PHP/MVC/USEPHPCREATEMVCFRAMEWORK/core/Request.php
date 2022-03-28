@@ -2,78 +2,49 @@
 /**
  * @author Sithembiso Maphanga
  * @package app\core
- * @Date  : 07/01/2022
+ * @Date  : 15/12/2021
  */ #Time : 18:38
 
 
-namespace app\core;
+ 
+ namespace app\core;
+// @author Sithembiso Maphanga
+// @package app\core
 
+
+// Class that deals with requests
 class Request {
 
-    // Returns the path passed the headers up to the question mark
+    // Method/Function to Get the Current Path from the URL
     public function getPath(){
+
+        // Getting and storing the path variable 
         $path = $_SERVER['REQUEST_URI'] ?? '/';
 
+        // Check if the url has parameters after a question mark
+        // Get the position  of the ?
         $position = strpos($path,'?');
 
-        if ($position == false) {
-            # code...
+        // If the url does not have other parameters after a question mark 
+        if($position === false){
+            // Return the whole path
             return $path;
         }
 
-        return substr($path,  0, $position);
+        // RETURN THE SUBSTRING OF THE PATH FROM POSITION 0 UP UNTILL THE POSITION WHERE THE ? WAS FOUND
+        // and leave the extra parameters for now
+        return substr($path,0,$position);
+        // return $path;
+
     }
 
-
-
-
-    // Returns the type of method that was propagated to headers
-    public function method(){
-        return strtolower($_SERVER['REQUEST_METHOD']);
+    // To distinguid between get requests and Post requests
+    public function getMethod(){
+        return  strtolower($_SERVER['REQUEST_METHOD']);
     }
 
-
-
-    // Gets the Sent parameters on GET AND POST of data to the server
-    public function getBody(){
-        $body = [];
-
-        // Do this if the method is get
-        if($this->method() === 'get'){
-            foreach ($_GET as $key => $value) {
-                # code...
-                // Sanitize the data
-                $body[$key] = filter_input(INPUT_GET,$key, FILTER_SANITIZE_SPECIAL_CHARS);
-            }
-        }
-
-        // Do this if the method is POST
-        if($this->method() === 'post'){
-            foreach ($_POST as $key => $value) {
-                # code...
-                // Sanitize the data
-                $body[$key] = filter_input(INPUT_POST,$key, FILTER_SANITIZE_SPECIAL_CHARS);
-            }
-        }
-
-        // Return the Created body
-        return $body;
+    // Adding my own function to have the request attributes at glance
+    public function getRequest(){
+        return $_SERVER;
     }
-
-
-
-
-    // Checks if the method is of GET type
-    public function isGet(){
-        return $this->method()  === 'get';
-    }
-
-
-    // Checks if the method is of POST type
-    public function isPost(){
-        return $this->method()  === 'post';
-    }
-
-
-
 }

@@ -1,0 +1,7 @@
+1. Configured redux and store: done.
+2. Configure home screen
+3. Started building Home screen Components : NavOptions
+4. Wire Image Views for Ride and Food
+5. Wire React Native Elements
+3. Last done 1:13:22 min stuck installing Semantic vector graphics. Before use icons, you need to install @ant-design/icons package:
+- npm install --save @ant-design/icons   __ did not complete running

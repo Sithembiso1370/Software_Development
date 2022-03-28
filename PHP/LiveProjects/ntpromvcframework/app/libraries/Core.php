@@ -11,16 +11,16 @@
 
     public function __construct(){
 
-      if(isset($_GET['url'])){
-        $url = $this->getUrl();
-      }
-      else{
-        // $url = $this->getUrl();
-        $url = [$this->currentController,$this->currentMethod];
-        // var_dump($url[0]);
-      }
+      // if(isset($_GET['url'])){
+      //   print_r($this->getUrl());
+      //   echo "<br>";
+      //   echo $_GET['url'];
+      // }
+      // else{
+      //   echo "url not set";
+      // }
 
-      
+      $url = $this->getUrl();
 
       // Look in BLL for first value
       if(file_exists('../app/controllers/' . ucwords($url[0]). '.php')){

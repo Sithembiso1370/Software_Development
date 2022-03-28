@@ -1,3 +1,0 @@
-1. Configured redux and store: done.
-2. Configure home screen
-3. Last done 55min
