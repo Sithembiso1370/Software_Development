@@ -1,0 +1,34 @@
+Issue Tracker
+
+I'm sure that most of you are familiar with GitHub or JIRA issues. It's essentially a CRUD 
+application (Create, Read, Update, and Delete a record in a database). The CRUD pattern 
+is so useful because pretty much all enterprise applications are built around the CRUD 
+pattern on different entities or objects.
+In our case, we'll only deal with a single object/record, because that's good enough 
+to depict the pattern. Once you grasp the fundamentals of how to implement the CRUD 
+pattern in MERN, you'll be able to replicate the pattern and create a real-life application.
+Here's the requirement list:
+
+•	 We should be able to view a list of issues, with the ability to filter 
+the list by various parameters.
+•	 We should be able to add new issues by supplying the initial 
+values of the issue's fields.
+•	 We should be able to update an issue by changing its field values.
+•	 We should be able to delete issues. 
+An issue should be described by the following attributes:
+•	 A title that summarizes the issue (free-form text)
+•	 An owner to whom the issue is assigned to (free-form short text)
+	 A status indicator (a list of possible status values)
+•	 Creation date (a date, automatically assigned)
+•	 Effort required to address the issue (number of days, a number)
+•	 Estimated completion date (a date, entered by the user)
+Note that I've included different types of fields (lists, date, number, text) to make sure 
+
+you learn how to deal with different data types. We'll start simple, build one feature at a 
+time, and learn about the MERN stack as we go along.
+In this chapter, we'll create React classes and instantiate components. We'll also 
+create bigger components by putting together smaller components. Finally, we'll pass 
+data among these components and create components dynamically from data. In terms 
+of features, the objective in this chapter is to lay out the main UI page of the Issue Tracker: 
+a list of issues. We'll hard-code the data that is used to display the page, and leave 
+persistence and retrieval of the data to a later chapter.
