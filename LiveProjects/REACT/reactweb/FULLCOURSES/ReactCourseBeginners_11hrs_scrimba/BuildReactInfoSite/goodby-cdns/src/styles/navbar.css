@@ -1,0 +1,22 @@
+
+
+.Nav {
+    position: relative;
+    background-color: red;
+    height: 100%;
+    flex-basis: 1;
+
+}
+
+.Nav>img {
+    position: relative;
+    background-color: aqua;
+    height: 100%;
+}
+
+
+.Nav>.NavHeader {
+    position: relative;
+    height: 100%;
+    background-color: yellow;
+}

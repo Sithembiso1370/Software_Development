@@ -1,0 +1,37 @@
+
+
+
+
+.App {
+  position: relative;
+  display: flex ;
+  flex-direction: column;
+
+}
+
+.Nav {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Main {
+  position: relative;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+img {
+  height: 200px;
+}
+
+
