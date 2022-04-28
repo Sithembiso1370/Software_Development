@@ -1,0 +1,29 @@
+START INTENT
+
+
+    public void sendMessage(View view) {
+        
+//        Creates a new intent to the DisplayMessageActivity 
+        Intent intent = new Intent(this, DisplayMessageActivity.class);
+        
+//        get the edit text using its id
+        EditText editText = (EditText) findViewById(R.id.editTextTextPersonName);
+        
+//        Get the text within the edit text
+        String message = editText.getText().toString();
+        
+//        Pass extra data from the edit text to the intent
+        intent.putExtra(EXTRA_MESSAGE, message);
+        
+//        Start the new activity
+        startActivity(intent);
+    }
+
+//GET DATA FROM INTENT
+    // Get the Intent that started this activity and extract the string
+    Intent intent = getIntent();
+    String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+
+    // Capture the layout's TextView and set the string as its text
+    TextView textView = findViewById(R.id.textView);
+    textView.setText(message);

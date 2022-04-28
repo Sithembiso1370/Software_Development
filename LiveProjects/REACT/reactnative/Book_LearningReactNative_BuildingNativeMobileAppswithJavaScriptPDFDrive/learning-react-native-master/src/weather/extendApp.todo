@@ -1,0 +1,5 @@
+If you want to extend your application further, here are some things to try:
+• Add more images, and change them based on the forecast
+• Add validation to the zip code field
+• Switch to using a more appropriate keypad for the zip code input
+• Display the five-day weather forecast

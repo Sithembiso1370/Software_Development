@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1650900427 source:c:\xampp\htdocs\cplusplus\giraffe\numbers.c
+
+1650909910 source:c:\xampp\htdocs\cplusplus\giraffe\main.cpp
+	<iostream>
+
