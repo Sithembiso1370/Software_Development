@@ -1,0 +1,21 @@
+{
+  "name": "pro-mern-stack",
+  "version": "1.0.0",
+  "description": "first mern project",
+  "main": "index.js",
+  "scripts": {
+    "compile": "babel src --presets react,es2015 --out-dir static",
+    "watch": "babel src -presets react,es2015 --out-dir static --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sithembiso Maphanga",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react": "^6.24.1"
+  }
+}
