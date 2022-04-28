@@ -1,0 +1,28 @@
+🕐 TIMESTAMPS:
+00:00 Introduction
+00:25 Build Showcase
+03:58 Initialising the Build
+09:53 Setting Up Tailwind CSS
+15:21 Building the Header Component
+19:24 Building the Left Side of the Header
+39:01 Building the Center of the Header (Header Icon Component)
+57:41 Building the Right Side of the Header (1/2)
+1:04:37 Implementing NextAuth.js
+1:18:14 Building the Login Component
+1:27:26 Building the Right Side of the Header (2/2)
+1:31:07 Building the Sidebar Component
+1:35:33 Building the SidebarRow Component (with Intense Debugging)
+1:48:07 Building the Feed Component
+1:49:13 Building the Stories Component
+1:51:09 Building the StoryCard Component (with Intense Debugging)
+2:15:32 Building the InputBox Component (1/2)
+2:31:26 Implementing Cloud Firestore
+2:35:27 Building the InputBox Component (2/2)
+2:59:31 Building the Posts Component
+3:02:12 Building the Post Component
+3:16:16 Building the Widgets Component
+3:23:06 Building the Contact Component
+3:26:40 Almost Final Build Demo
+3:28:50 Implementing Additional Server Side Rendering Step @done
+3:35:03 Final Build Demo
+3:37:49 Outro
