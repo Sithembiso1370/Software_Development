@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Map</title>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <h3 align="center">Reagile Primary School Directions</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvhZSBxBvbs60AB2MZsh0WnP1-n_a3mGQ&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+  </body>
+  <script>
+    //   -25.962555795525667, 28.221287003179324
+      // Initialize and add the map
+        function initMap() {
+        // The locatio aln of Uluru
+        const tembisa = { lat: -25.962555795525667, lng: 28.221287003179324 };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 4,
+            center: tembisa,
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+            position: tembisa,
+            map: map,
+        });
+        }
+  </script>
+</html>
