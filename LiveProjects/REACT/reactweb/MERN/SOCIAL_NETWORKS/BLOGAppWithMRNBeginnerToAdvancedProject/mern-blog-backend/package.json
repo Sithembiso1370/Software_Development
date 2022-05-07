@@ -1,0 +1,15 @@
+{
+  "name": "mern-blog-backend",
+  "version": "1.0.0",
+  "description": "Blog Applicatrion MERN CRUD",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Sithembiso Maphanga",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  }
+}
