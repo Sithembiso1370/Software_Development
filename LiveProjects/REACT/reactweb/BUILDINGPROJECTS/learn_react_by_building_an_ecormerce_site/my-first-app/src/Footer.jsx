@@ -12,12 +12,6 @@ export default class FooterEx extends Component{
         // this.state = 'offline'
       }
 
-    
-    // updateState = (props)=> {
-    //      console.log(this.state.date);
-    // }
-
-
     render(){
         return (
             <div>
