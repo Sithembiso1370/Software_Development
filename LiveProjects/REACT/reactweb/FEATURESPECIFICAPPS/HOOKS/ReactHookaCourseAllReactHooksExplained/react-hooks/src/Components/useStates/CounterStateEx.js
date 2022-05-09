@@ -12,10 +12,16 @@ const CounterStateExample = () => {
         setCounter(counter + 1);
     }
 
+    // Create increment function to be called when a button is clicked will increase the counter
+    const decrement = () =>{
+        setCounter(counter - 1);
+    }
+
     return (
         <div>
             <h1>hello {counter}</h1>
             <button onClick={increment}>increment</button>
+            <button onClick={decrement}>decrement</button>
         </div>
     );
 };

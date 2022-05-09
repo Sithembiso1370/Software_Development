@@ -11,7 +11,8 @@ const InputStateExample = () =>{
     return (
         <div>
             <input placeholder='Enter Something' onChange={displayInp}/> 
-                {inputValue}
+            <h4>{inputValue}</h4>
+                
         </div>
     );
 }

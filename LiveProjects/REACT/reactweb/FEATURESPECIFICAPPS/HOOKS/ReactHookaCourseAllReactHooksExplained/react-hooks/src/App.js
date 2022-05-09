@@ -1,11 +1,14 @@
-import StateTutorial from './Components/StateTutorial';
+import StateTutorial from './Components/useStates/StateTutorial';
+import ReducerTutorial from './Components/useReducer/UseReducer';
+import UseEffectEx from './Components/useEffect/UseEffect';
 
 function App() {
 
   return (
     <div className="App">
-      <StateTutorial/>
+      <ReducerTutorial/>
       <hr/>
+      <UseEffectEx/>
     </div>
   );
 }
