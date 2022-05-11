@@ -1,0 +1,4 @@
+- Struggled with Using material UI/core dependancies 
+- found solution on github and installed with dependacy support instead
+- npm install --save --legacy-peer-deps @material-ui/core
+- npm install --save --legacy-peer-deps @material-ui/icons
