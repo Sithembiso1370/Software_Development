@@ -1,7 +1,9 @@
 Goal -  To Build a Full Stack Food Delivery App with react, redux and firebase
 
-TODO 1 - Project Setup
+TODO 1 - Project Setup 04am - 5am
 -- Installed a create react app using yarn  11/05/2022
 -- Configured Firebase cloud firestore database 11/05/2022
 -- Configured Firebase Realtime database 11/05/2022
--- Configured Firebase Storage 11/05/2022 ---(Not complete last did 10:23min)
+-- Configured Firebase Storage 11/05/2022 --- 11/05/2022
+
+TODO 1 - Header Component
