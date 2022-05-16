@@ -1,0 +1,213 @@
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">SimpleUI_Adnroiddocs</string>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision e1743276b662e732f6e1286f00690dca62f8ea0d)
++++ b/app/src/main/res/values/strings.xml	(date 1638875130901)
+@@ -1,3 +1,5 @@
+ <resources>
+     <string name="app_name">SimpleUI_Adnroiddocs</string>
++    <string name="edit_message">Enter a message</string>
++    <string name="button_send">Send</string>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/java/com/example/simpleui_adnroiddocs/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.simpleui_adnroiddocs;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.os.Bundle;\r\n\r\npublic class MainActivity extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_main);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/simpleui_adnroiddocs/MainActivity.java b/app/src/main/java/com/example/simpleui_adnroiddocs/MainActivity.java
+--- a/app/src/main/java/com/example/simpleui_adnroiddocs/MainActivity.java	(revision e1743276b662e732f6e1286f00690dca62f8ea0d)
++++ b/app/src/main/java/com/example/simpleui_adnroiddocs/MainActivity.java	(date 1638874930597)
+@@ -2,13 +2,39 @@
+ 
+ import androidx.appcompat.app.AppCompatActivity;
+ 
++import android.content.Intent;
+ import android.os.Bundle;
++import android.view.View;
++import android.widget.EditText;
+ 
+ public class MainActivity extends AppCompatActivity {
++//     add the EXTRA_MESSAGE constant and the sendMessage() code
++    public static final String EXTRA_MESSAGE = "com.example.simpleui_adnroiddocs.MESSAGE";
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_main);
+     }
++
++    /** Called when the user taps the Send button */
++    public void sendMessage(View view) {
++
++//        Creates a new intent to the DisplayMessageActivity
++        Intent intent = new Intent(this, DisplayMessageActivity.class);
++
++//        get the edit text using its id
++        EditText editText = (EditText) findViewById(R.id.editTextTextPersonName);
++
++//        Get the text within the edit text
++        String message = editText.getText().toString();
++
++//        Pass extra data from the edit text to the intent
++        intent.putExtra(EXTRA_MESSAGE, message);
++
++//        Start the new activity
++        startActivity(intent);
++    }
++
++
+ }
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".MainActivity\">\r\n\r\n\r\n    <EditText\r\n        android:id=\"@+id/editTextTextPersonName\"\r\n        android:layout_width=\"215dp\"\r\n        android:layout_height=\"68dp\"\r\n        android:layout_marginStart=\"28dp\"\r\n        android:ems=\"10\"\r\n        android:inputType=\"textPersonName\"\r\n        android:text=\"Name\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.074\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/button\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"44dp\"\r\n        android:text=\"Button\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.191\"\r\n        app:layout_constraintStart_toEndOf=\"@+id/editTextTextPersonName\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.07\" />\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+--- a/app/src/main/res/layout/activity_main.xml	(revision e1743276b662e732f6e1286f00690dca62f8ea0d)
++++ b/app/src/main/res/layout/activity_main.xml	(date 1638874593502)
+@@ -9,27 +9,28 @@
+ 
+     <EditText
+         android:id="@+id/editTextTextPersonName"
+-        android:layout_width="215dp"
+-        android:layout_height="68dp"
+-        android:layout_marginStart="28dp"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="16dp"
++        android:layout_marginLeft="16dp"
++        android:layout_marginTop="16dp"
+         android:ems="10"
++        android:hint="@string/edit_message"
+         android:inputType="textPersonName"
+-        android:text="Name"
+-        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toStartOf="@+id/button"
++        app:layout_constraintHorizontal_bias="0.5"
+         app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent"
+-        app:layout_constraintVertical_bias="0.074" />
++        app:layout_constraintTop_toTopOf="parent" />
+ 
+     <Button
+         android:id="@+id/button"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:layout_marginStart="44dp"
+-        android:text="Button"
+-        app:layout_constraintBottom_toBottomOf="parent"
++        android:layout_marginEnd="16dp"
++        android:layout_marginStart="16dp"
++        android:text="@string/button_send"
++        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName"
+         app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.191"
+-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
+-        app:layout_constraintTop_toTopOf="parent"
+-        app:layout_constraintVertical_bias="0.07" />
++        app:layout_constraintHorizontal_bias="0.5"
++        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName" />
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.example.simpleui_adnroiddocs\">\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.SimpleUI_Adnroiddocs\">\r\n        <activity\r\n            android:name=\".MainActivity\"\r\n            android:exported=\"true\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision e1743276b662e732f6e1286f00690dca62f8ea0d)
++++ b/app/src/main/AndroidManifest.xml	(date 1638876294075)
+@@ -10,6 +10,11 @@
+         android:supportsRtl="true"
+         android:theme="@style/Theme.SimpleUI_Adnroiddocs">
+         <activity
++            android:name=".DisplayMessageActivity"
++            android:exported="false"
++            android:parentActivityName=".MainActivity">
++        </activity>
++        <activity
+             android:name=".MainActivity"
+             android:exported="true">
+             <intent-filter>
+Index: app/src/main/res/layout/activity_display_message.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_display_message.xml b/app/src/main/res/layout/activity_display_message.xml
+new file mode 100644
+--- /dev/null	(date 1638875594040)
++++ b/app/src/main/res/layout/activity_display_message.xml	(date 1638875594040)
+@@ -0,0 +1,22 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".DisplayMessageActivity">
++
++    <TextView
++        android:id="@+id/textView"
++        android:layout_width="223dp"
++        android:layout_height="67dp"
++        android:text="textView"
++        android:textAlignment="center"
++        android:textSize="20sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.351"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.408" />
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/simpleui_adnroiddocs/DisplayMessageActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/simpleui_adnroiddocs/DisplayMessageActivity.java b/app/src/main/java/com/example/simpleui_adnroiddocs/DisplayMessageActivity.java
+new file mode 100644
+--- /dev/null	(date 1638876076928)
++++ b/app/src/main/java/com/example/simpleui_adnroiddocs/DisplayMessageActivity.java	(date 1638876076928)
+@@ -0,0 +1,25 @@
++package com.example.simpleui_adnroiddocs;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.content.Intent;
++import android.os.Bundle;
++import android.widget.TextView;
++
++public class DisplayMessageActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_display_message);
++
++
++        // Get the Intent that started this activity and extract the string
++        Intent intent = getIntent();
++        String msg = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
++
++        // Capture the layout's TextView and set the string as its text
++        TextView textView1 = findViewById(R.id.textView);
++        textView1.setText(msg);
++    }
++}
+\ No newline at end of file
