@@ -1,4 +1,0 @@
-Inside optional_task.txt, write pseudocode for the following scenario:
-○ An algorithm that asks the user to enter four numbers, sorts those
-numbers from smallest to largest and then prints the sorted
-numbers.

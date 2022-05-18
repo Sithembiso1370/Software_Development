@@ -1,8 +1,0 @@
-admin, Register Users with taskManager.py, Use taskManager.py to add the usernames and passwords for all team members that will be using this program., 10 Oct 2019, 20 Oct 2019, No
-admin, Assign initial tasks, Use taskManager.py to assign each team member with appropriate tasks, 10 Oct 2019, 25 Oct 2019, Nofirst,first,first,2021-10-07,28/11/2021,No
-jjj,jjj,jjj,2021-10-07,jjj,No
-rrrr,rrrr,rrrr,2021-10-07,rrrr,No
-xxx,task1,testetask,2021-10-07,2/01/2021,No
-Sthera1,App Creater,He is the founder and Inventor of the App,2021-10-07,07/09/2021,No
-Nkurta01,18/11/2006,Adding taking Care oof bro,2021-10-07,today,No
-Sthera1,Keep My room Clean,Do regular room sweeps ,2021-10-07,07/10/2021,No

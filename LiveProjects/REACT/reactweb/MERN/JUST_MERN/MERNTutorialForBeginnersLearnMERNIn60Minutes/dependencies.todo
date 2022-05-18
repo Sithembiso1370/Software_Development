@@ -1,5 +1,0 @@
-
-- Express to create a server
-- Mongoose - To communicate with the database use this library
-- Cors - for connections with react and its backend
-- Nodemon - for refresh on code change

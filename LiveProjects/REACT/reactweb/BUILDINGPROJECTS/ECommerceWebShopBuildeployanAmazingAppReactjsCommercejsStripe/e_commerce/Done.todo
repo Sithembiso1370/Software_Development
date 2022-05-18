@@ -1,8 +1,0 @@
-
-TODO DONE -
-0-5min
-Installed - npm install --save --legacy-peer-deps @material-ui/core
-Installed - - npm install --save --legacy-peer-deps @material-ui/icons
-Installed - npm install --save @stripe/react-stripe-js @stripe/stripe-js
-Installed - - npm install @chec/commerce.js
-Insalled - npm install react-hook-form (Simple form validation with React Hook Form.)

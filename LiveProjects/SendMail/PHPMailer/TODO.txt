@@ -1,2 +1,0 @@
-- composer require phpmailer/phpmailer
-- composer require psr/log

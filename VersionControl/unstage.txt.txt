@@ -1,7 +1,0 @@
-In the newer version that is > 2.2 you can use git restore --staged <file_name>. Note here If you want to unstage (move to changes) your files one at a time you use above command with your file name. eg
-
-git restore --staged abc.html
-Now if you want unstage all your file at once, you can do something like this
-
-git restore --staged .
-Please note space and dot (.) which means consider staged all files.

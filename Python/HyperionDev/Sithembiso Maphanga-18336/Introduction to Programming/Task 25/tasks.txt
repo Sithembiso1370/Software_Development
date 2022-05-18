@@ -1,5 +1,0 @@
-admin, Assign initial tasks, Use taskManager.py to assign each team member with appropriate tasks, 10 Oct 2019, 2021-11-19,yes
-Sthera,checking none Sthera1 can add tasks,above,2021-10-19,2022-11-19,yes
-Sthera,Stheras first Task,Testing if I can add a task,2021-11-19,2021-11-19,No
-Nkululeko,test task,testing if i can add tasks for other user,2021-11-26,2021-12-30,No
-Vuyo,Vuyos first task,testing b4 upload,2022-01-21,2022-01-22,No

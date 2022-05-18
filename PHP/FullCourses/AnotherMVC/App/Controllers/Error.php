@@ -1,4 +1,0 @@
-<?php
-
-
-echo 'error handler';
