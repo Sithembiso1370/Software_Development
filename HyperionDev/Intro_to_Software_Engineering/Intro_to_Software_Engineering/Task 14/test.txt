@@ -1,0 +1,5 @@
+--------------------- START-----------------------------------------------------
+Java provides several way to read files.
+You can read file using Scanner, FileReader, FileInputStream and BufferedReader.
+This Java program shows how to read file using java.util.Scanner class.
+--------------------- END--------------------------------------------------------

@@ -1,0 +1,9 @@
+Basic W3 Schools Django CRUD Working need to work with static files and Django query sets
+
+1. Django Intro to CRUD Re-done today - 20/10/2022
+2. Django Variables 
+- - In Django templates, you can render variables by putting them inside {{ }} brackets:
+- We use the Django template tag {% for %} to loop through the members.
+
+3. Django Tags
+- An if statement evaluates a variable and executes a block of code if the value is true.
