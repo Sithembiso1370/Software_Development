@@ -1,0 +1,15 @@
+1. Setting up Python- Create a virtual environment
+2. Setting up Django 
+Note that we’re installing two more dependencies for our API
+Django REST Framework: a powerful and flexible toolkit for building Web APIs
+django-cors-headers: an app for handling the server headers required for CORS
+
+3.Adding models and views to Django
+4.Migrating our Django models to the database
+5. Diving into our Django REST API
+6.Testing our endpoints in Django
+7.Building the React app
+8. Setting up our React app to integrate with Django
+
+-- still need to install boostrap before runing backend and frontend
+- npm install bootstrap reactstrap axios --save

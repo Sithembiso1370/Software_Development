@@ -1,0 +1,7 @@
+In this article, we will build a photo gallery app using MERN stack. It may seem simple, but by building this app you will learn:
+
+1. How to upload and serve images or any other file and restrict it to a specific file extension
+2. How to restrict file upload size
+3. How to get server errors in the redux store and display them on the front-end
+4. How to avoid returning un-necessarily large data from the server
+5. How to deploy client and server code on the same server to run it on the same port
